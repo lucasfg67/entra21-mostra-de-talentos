@@ -1,2 +1,2 @@
-# Entra21-Amostra-DeTalento
-trabalho amostra de talentos
+# Entra21-mostra-DeTalento
+trabalho mostra de talentos

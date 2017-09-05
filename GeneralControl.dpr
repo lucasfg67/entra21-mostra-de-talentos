@@ -28,17 +28,53 @@ uses
   UEstado in 'Modelo\Persistencia\UEstado.pas',
   UPais in 'Modelo\Persistencia\UPais.pas',
   URegraCRUDPais in 'Modelo\Regra\URegraCRUDPais.pas',
-  URegraCRUDEstado in 'Modelo\Regra\URegraCRUDEstado.pas';
+  URegraCRUDEstado in 'Modelo\Regra\URegraCRUDEstado.pas',
+  URepositorioCidade in 'Modelo\Persistencia\URepositorioCidade.pas',
+  URepositorioCliente in 'Modelo\Persistencia\URepositorioCliente.pas',
+  URepositorioEquipamento in 'Modelo\Persistencia\URepositorioEquipamento.pas',
+  URepositorioEstado in 'Modelo\Persistencia\URepositorioEstado.pas',
+  URepositorioMaterial in 'Modelo\Persistencia\URepositorioMaterial.pas',
+  URepositorioOS in 'Modelo\Persistencia\URepositorioOS.pas',
+  URepositorioPais in 'Modelo\Persistencia\URepositorioPais.pas',
+  URepositorioTecnico in 'Modelo\Persistencia\URepositorioTecnico.pas',
+  URepositorioUsuario in 'Modelo\Persistencia\URepositorioUsuario.pas';
 
 {$R *.res}
 
 var
   frmLogin: TfrmLogin;
+  RepositorioCliente: TRepositorioCliente;
+  CLIENTE: TCLIENTE;
 begin
   {$DEFINE PROD}
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TdmEntra21, dmEntra21);
+
+  RepositorioCliente := TRepositorioCliente.Create;
+
+  CLIENTE              := TCLIENTE.Create;
+  CLIENTE.NOME         := 'Baumgarten';
+  CLIENTE.SOLICITANTE  := 'Ricardo';
+  CLIENTE.CNPJ_CPF     := '10124812988';
+  CLIENTE.TELEFONE     := '991620743';
+  CLIENTE.CIDADE.ID    := 1;
+  CLIENTE.ENDEREÇO     := 'Rua Max Humpl 2309';
+  CLIENTE.TIPO_PESSOA  := '1';
+
+  RepositorioCliente.Insere(CLIENTE);
+
+  CLIENTE.NOME :=  'Blufitex';
+  RepositorioCLIENTE.Atualiza(CLIENTE);
+
+  RepositorioCLIENTE.Retorna(CLIENTE.ID);
+  dmEntra21.IniciaTransacao;
+  try
+    RepositorioCLIENTE.Exclui(CLIENTE.ID);
+  finally
+    dmEntra21.FinalizaTransacao;
+  end;
+
   {$IFDEF PROD}
   frmLogin := TfrmLogin.Create(nil);
   if frmLogin.ShowModal = mrYes then

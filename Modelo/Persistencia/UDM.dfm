@@ -7,7 +7,6 @@ object dmEntra21: TdmEntra21
     ConnectionName = 'IBConnection'
     DriverName = 'Firebird'
     GetDriverFunc = 'getSQLDriverINTERBASE'
-    KeepConnection = False
     LibraryName = 'dbx4fb.dll'
     LoginPrompt = False
     Params.Strings = (
@@ -29,7 +28,7 @@ object dmEntra21: TdmEntra21
       'GetDriverFunc=getSQLDriverINTERBASE'
       'LibraryName=dbx4fb.dll'
       'VendorLib=fdbclient.dll'
-      'Database=localhost:D:\MOTRA DE TALENTOS\GeneralControl\DB\DB.FDB'
+      'Database=localhost:D:\entra21-mostra-de-talentos\DB\DB.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'
@@ -46,6 +45,7 @@ object dmEntra21: TdmEntra21
       'ServerCharSet='
       'Trim Char=False')
     VendorLib = 'fbclient.dll'
+    Connected = True
     Left = 32
     Top = 24
   end

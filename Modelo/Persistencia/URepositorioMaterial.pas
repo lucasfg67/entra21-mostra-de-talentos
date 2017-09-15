@@ -38,7 +38,7 @@ begin
   inherited;
   with FSQLSelect do
   begin
-    coMATERIAL.DESCRIÇÃO      := FieldByName(FLD_MATERIAL_DESCRICAO).AsString;
+    coMATERIAL.DESCRICAO      := FieldByName(FLD_MATERIAL_DESCRICAO).AsString;
     coMATERIAL.VALOR_UNITARIO := FieldByName (FLD_MATERIAL_VALOR_UNITARIO).AsFloat;
   end;
 end;
@@ -49,7 +49,7 @@ begin
   inherited;
   with coSQLQuery do
   begin
-    ParamByName(FLD_MATERIAL_DESCRICAO).AsString     := coMATERIAL.DESCRIÇÃO;
+    ParamByName(FLD_MATERIAL_DESCRICAO).AsString     := coMATERIAL.DESCRICAO;
     ParamByName(FLD_MATERIAL_VALOR_UNITARIO).AsFloat := coMATERIAL.VALOR_UNITARIO;
   end;
 end;

@@ -9,7 +9,7 @@ uses
 type
   TMaterial= class (TENTIDADE)
   public
-    DESCRIÇÃO     : String;
+    DESCRICAO     : String;
     VALOR_UNITARIO: Double;
   end;
 

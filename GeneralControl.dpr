@@ -37,40 +37,42 @@ uses
   URepositorioOS in 'Modelo\Persistencia\URepositorioOS.pas',
   URepositorioPais in 'Modelo\Persistencia\URepositorioPais.pas',
   URepositorioTecnico in 'Modelo\Persistencia\URepositorioTecnico.pas',
-  URepositorioUsuario in 'Modelo\Persistencia\URepositorioUsuario.pas';
+  URepositorioUsuario in 'Modelo\Persistencia\URepositorioUsuario.pas',
+  URegraCRUDMaterial in 'Modelo\Regra\URegraCRUDMaterial.pas',
+  URegraCRUDCliente in 'Modelo\Regra\URegraCRUDCliente.pas',
+  URegraCRUDOs in 'Modelo\Regra\URegraCRUDOs.pas',
+  URegraCRUDEquipamento in 'Modelo\Regra\URegraCRUDEquipamento.pas',
+  URegraCRUDTecnico in 'Modelo\Regra\URegraCRUDTecnico.pas',
+  URegraCRUDUsuario in 'Modelo\Regra\URegraCRUDUsuario.pas';
 
 {$R *.res}
 
 var
   frmLogin: TfrmLogin;
-  RepositorioCliente: TRepositorioCliente;
-  CLIENTE: TCLIENTE;
+  RepositorioUsuario: TRepositorioUsuario;
+  USUARIO: TUSUARIO;
 begin
   {$DEFINE PROD}
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TdmEntra21, dmEntra21);
+  RepositorioUsuario := TRepositorioUsuario.Create;
 
-  RepositorioCliente := TRepositorioCliente.Create;
+  USUARIO             := TUSUARIO.Create;
+  USUARIO.NOME        := 'Lucas Fernando Gonçalves';
+  USUARIO.SENHA       := '9852120luc';
 
-  CLIENTE              := TCLIENTE.Create;
-  CLIENTE.NOME         := 'Baumgarten';
-  CLIENTE.SOLICITANTE  := 'Ricardo';
-  CLIENTE.CNPJ_CPF     := '10124812988';
-  CLIENTE.TELEFONE     := '991620743';
-  CLIENTE.CIDADE.ID    := 1;
-  CLIENTE.ENDEREÇO     := 'Rua Max Humpl 2309';
-  CLIENTE.TIPO_PESSOA  := '1';
 
-  RepositorioCliente.Insere(CLIENTE);
 
-  CLIENTE.NOME :=  'Blufitex';
-  RepositorioCLIENTE.Atualiza(CLIENTE);
+  RepositorioUsuario.Insere(USUARIO);
 
-  RepositorioCLIENTE.Retorna(CLIENTE.ID);
+  USUARIO.SENHA := '985212000Luc';
+  RepositorioUSUARIO.Atualiza(USUARIO);
+
+  RepositorioUSUARIO.Retorna(USUARIO.ID);
   dmEntra21.IniciaTransacao;
   try
-    RepositorioCLIENTE.Exclui(CLIENTE.ID);
+    RepositorioUSUARIO.Exclui(USUARIO.ID);
   finally
     dmEntra21.FinalizaTransacao;
   end;

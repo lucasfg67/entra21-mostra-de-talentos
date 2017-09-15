@@ -56,7 +56,7 @@ begin
     coCLIENTE.CNPJ_CPF    := FieldByName(FLD_CLIENTE_CNPJ_CPF).AsString;
     coCLIENTE.TELEFONE    := FieldByName(FLD_CLIENTE_TELEFONE).AsString;
     coCLIENTE.ID          := FieldByName(FLD_CLIENTE_ID_CIDADE).AsInteger;
-    coCLIENTE.ENDEREÇO    := FieldByName(FLD_CLIENTE_ENDEREÇO).AsString;
+    coCLIENTE.ENDEREÇO    := FieldByName(FLD_CLIENTE_ENDERECO).AsString;
     cOCLIENTE.TIPO_PESSOA := FieldByName(FLD_CLIENTE_TIPO_PESSOA).AsString;
     coCLIENTE.CIDADE      := TCIDADE(FRepositorioCidade.Retorna(FieldByName(FLD_CLIENTE_ID_CIDADE).AsInteger));
   end;
@@ -73,7 +73,7 @@ begin
     ParamByName(FLD_CLIENTE_CNPJ_CPF).AsString    := coCLIENTE.CNPJ_CPF;
     ParamByName(FLD_CLIENTE_TELEFONE).AsString    := coCLIENTE.TELEFONE;
     ParamByName(FLD_CLIENTE_ID_CIDADE).AsInteger  := coCLIENTE.ID;
-    ParamByName(FLD_CLIENTE_ENDEREÇO).AsString    := coCLIENTE.ENDEREÇO;
+    ParamByName(FLD_CLIENTE_ENDERECO).AsString    := coCLIENTE.ENDEREÇO;
     ParamByName(FLD_CLIENTE_TIPO_PESSOA).AsString := coCLIENTE.TIPO_PESSOA;
     ParamByName(FLD_CLIENTE_ID_CIDADE).AsInteger  := coCLIENTE.CIDADE.ID;
   end;

@@ -25,6 +25,9 @@ type
     procedure ValidaAtualizacao(const coENTIDADE: TENTIDADE); virtual;
     procedure ValidaInsercao(const coENTIDADE: TENTIDADE); virtual;
     procedure ValidaExclusao(const coENTIDADE: TENTIDADE); virtual;
+    procedure PreparaInsercao(const coENTIDADE: TENTIDADE); virtual;
+    procedure PreparaAtualizacao(const coENTIDADE: TENTIDADE); virtual;
+    procedure PreparaExclusao(const coENTIDADE: TENTIDADE); virtual;
 
   public
     constructor Create; virtual;
@@ -66,20 +69,43 @@ end;
 procedure TRegraCRUD.Atualiza(const coENTIDADE: TENTIDADE);
 begin
   ValidaAtualizacao(coENTIDADE);
+  PreparaAtualizacao(coENTIDADE);
   FRepositorioDB.Atualiza(coENTIDADE);
 end;
 
 procedure TRegraCRUD.Exclui(const ciId: Integer);
+var
+  loENTIDADE: TENTIDADE;
 begin
   ValidaExistencia(ciId);
-  ValidaExclusao(Retorna(ciId));
+
+  loENTIDADE := Retorna(ciId);
+  ValidaExclusao(loENTIDADE);
+  PreparaExclusao(loENTIDADE);
+
   FRepositorioDB.Exclui(ciId);
 end;
 
 procedure TRegraCRUD.Insere(const coENTIDADE: TENTIDADE);
 begin
   ValidaInsercao(coENTIDADE);
+  PreparaInsercao(coENTIDADE);
   FRepositorioDB.Insere(coENTIDADE);
+end;
+
+procedure TRegraCRUD.PreparaAtualizacao(const coENTIDADE: TENTIDADE);
+begin
+  //Sem implementacao padrão
+end;
+
+procedure TRegraCRUD.PreparaExclusao(const coENTIDADE: TENTIDADE);
+begin
+  //Sem implementacao padrão
+end;
+
+procedure TRegraCRUD.PreparaInsercao(const coENTIDADE: TENTIDADE);
+begin
+  //Sem implementacao padrão
 end;
 
 function TRegraCRUD.Retorna(const ciId: Integer): TENTIDADE;

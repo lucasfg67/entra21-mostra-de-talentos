@@ -23,16 +23,14 @@ type
   end;
 
 const
-
   TBL_OS                   = 'OS';
   FLD_OS_DATA_ENTRADA      = 'DATA_ENTRADA';
   FLD_OS_DESCRICAO_SERVICO = 'DESCRICAO_SERVICO';
   FLD_OS_ID_CLIENTE        = 'ID_CLIENTE';
   FLD_OS_ID_EQUIPAMENTO    = 'ID_EQUIPAMENTO';
 
- resourcestring
-
-   STR_EQUIPAMENTO = 'Os';
+resourcestring
+  STR_OS = 'Os';
 
 
 implementation

@@ -28,17 +28,55 @@ uses
   UEstado in 'Modelo\Persistencia\UEstado.pas',
   UPais in 'Modelo\Persistencia\UPais.pas',
   URegraCRUDPais in 'Modelo\Regra\URegraCRUDPais.pas',
-  URegraCRUDEstado in 'Modelo\Regra\URegraCRUDEstado.pas';
+  URegraCRUDEstado in 'Modelo\Regra\URegraCRUDEstado.pas',
+  URepositorioCidade in 'Modelo\Persistencia\URepositorioCidade.pas',
+  URepositorioCliente in 'Modelo\Persistencia\URepositorioCliente.pas',
+  URepositorioEquipamento in 'Modelo\Persistencia\URepositorioEquipamento.pas',
+  URepositorioEstado in 'Modelo\Persistencia\URepositorioEstado.pas',
+  URepositorioMaterial in 'Modelo\Persistencia\URepositorioMaterial.pas',
+  URepositorioOS in 'Modelo\Persistencia\URepositorioOS.pas',
+  URepositorioPais in 'Modelo\Persistencia\URepositorioPais.pas',
+  URepositorioTecnico in 'Modelo\Persistencia\URepositorioTecnico.pas',
+  URepositorioUsuario in 'Modelo\Persistencia\URepositorioUsuario.pas',
+  URegraCRUDMaterial in 'Modelo\Regra\URegraCRUDMaterial.pas',
+  URegraCRUDCliente in 'Modelo\Regra\URegraCRUDCliente.pas',
+  URegraCRUDOs in 'Modelo\Regra\URegraCRUDOs.pas',
+  URegraCRUDEquipamento in 'Modelo\Regra\URegraCRUDEquipamento.pas',
+  URegraCRUDTecnico in 'Modelo\Regra\URegraCRUDTecnico.pas',
+  URegraCRUDUsuario in 'Modelo\Regra\URegraCRUDUsuario.pas';
 
 {$R *.res}
 
 var
   frmLogin: TfrmLogin;
+  RepositorioUsuario: TRepositorioUsuario;
+  USUARIO: TUSUARIO;
 begin
   {$DEFINE PROD}
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TdmEntra21, dmEntra21);
+  RepositorioUsuario := TRepositorioUsuario.Create;
+
+  USUARIO             := TUSUARIO.Create;
+  USUARIO.NOME        := 'Lucas Fernando Gonçalves';
+  USUARIO.SENHA       := '9852120luc';
+
+
+
+  RepositorioUsuario.Insere(USUARIO);
+
+  USUARIO.SENHA := '985212000Luc';
+  RepositorioUSUARIO.Atualiza(USUARIO);
+
+  RepositorioUSUARIO.Retorna(USUARIO.ID);
+  dmEntra21.IniciaTransacao;
+  try
+    RepositorioUSUARIO.Exclui(USUARIO.ID);
+  finally
+    dmEntra21.FinalizaTransacao;
+  end;
+
   {$IFDEF PROD}
   frmLogin := TfrmLogin.Create(nil);
   if frmLogin.ShowModal = mrYes then

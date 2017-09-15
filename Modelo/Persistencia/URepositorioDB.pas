@@ -6,6 +6,7 @@ uses
     SqlExpr
   , URepositorio
   , UEntidade
+  , Generics.Collections
   ;
 
 type
@@ -64,12 +65,15 @@ type
     //Docs TO-DO
     function Retorna(const ciId: Integer): TENTIDADE;
     //Docs TO-DO
+    function RetornaTodos: TList<T>;
+    //Docs TO-DO
     function Achou(const ciPK: Integer): Boolean;
 
     property NOME_ENTIDADE: String read FNomeEntidade;
   end;
 
 const
+  CNT_SELECT_ALL        = 'select * from %s order by %s';
   CNT_SELECT_UNIQUE     = 'select * from %s where %s = :%1:s';
   CNT_SELECT_GEN_ID     = 'select gen_id(%s, 1) from RDB$DATABASE';
   CNT_INSERT            = 'insert into %s values (%s)';
@@ -215,6 +219,25 @@ begin
     end;
 
   Result := Copy(Result, 1, Length(Result) -2);
+end;
+
+function TRepositorioDB<T>.RetornaTodos: TList<T>;
+var
+  ENTIDADE: T;
+begin
+  FSQLSelect.Close;
+  FSQLSelect.CommandText := Format(CNT_SELECT_ALL, [FNomeTabela, FNomeCampoPK]);
+  FSQLSelect.Open;
+
+  Result := TList<T>.Create;
+  while not FSQLSelect.Eof do
+    begin
+      ENTIDADE := T.Create;
+      AtribuiDBParaEntidade(ENTIDADE);
+      Result.Add(ENTIDADE);
+
+      FSQLSelect.Next;
+    end;
 end;
 
 function TRepositorioDB<T>.RetornaNovoId: Integer;

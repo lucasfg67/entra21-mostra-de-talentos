@@ -13,8 +13,11 @@ type
     mmPrincipal: TMainMenu;
     miSair: TMenuItem;
     sbPrincipal: TStatusBar;
+    miCadastro: TMenuItem;
+    miMaterial: TMenuItem;
     procedure miSairClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure miMaterialClick(Sender: TObject);
   private
     { Private declaration }
   public
@@ -29,9 +32,15 @@ implementation
 uses
     UDM
   , DB
+  , UFrmCadastroMaterial
   ;
 
 {$R *.dfm}
+
+procedure TFrmPrincipal.miMaterialClick(Sender: TObject);
+begin
+  Application.CreateForm(TFrmCadastroMaterial, FrmCadastroMaterial);
+end;
 
 procedure TFrmPrincipal.miSairClick(Sender: TObject);
 begin

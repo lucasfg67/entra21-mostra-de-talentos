@@ -28,7 +28,9 @@ object dmEntra21: TdmEntra21
       'GetDriverFunc=getSQLDriverINTERBASE'
       'LibraryName=dbx4fb.dll'
       'VendorLib=fdbclient.dll'
-      'Database=localhost:D:\entra21-mostra-de-talentos\DB\DB.FDB'
+      
+        'Database=localhost:D:\GeneralControl Mostra De Talentos\DB\DB.FD' +
+        'B'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'
@@ -42,10 +44,9 @@ object dmEntra21: TdmEntra21
       'BlobSize=-1'
       'ErrorResourceFile='
       'RoleName=RoleName'
-      'ServerCharSet='
+      'ServerCharSet=ISO8859_1'
       'Trim Char=False')
     VendorLib = 'fbclient.dll'
-    Connected = True
     Left = 32
     Top = 24
   end

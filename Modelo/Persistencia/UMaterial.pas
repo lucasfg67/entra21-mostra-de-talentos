@@ -18,7 +18,7 @@ const
   FLD_MATERIAL_DESCRICAO      = 'DESCRICAO';
   FLD_MATERIAL_VALOR_UNITARIO = 'VALOR_UNITARIO';
 
-  VW_MATERIAL                 = 'MATERIAL';
+  VW_MATERIAL                 = 'VW_MATERIAL';
   VW_MATERIAL_DESCRICAO       = 'Descrição';
   VW_MATERIAL_VALOR_UNITARIO  = 'Valor Unitário';
   VW_MATERIAL_ID              = 'Cód.';

@@ -1,5 +1,7 @@
 program GeneralControl;
 
+{$DEFINE DESENV}
+
 uses
   Forms,
   UFrmPrincipal in 'VisaoControle\UFrmPrincipal.pas' {FrmPrincipal},
@@ -43,40 +45,19 @@ uses
   URegraCRUDOs in 'Modelo\Regra\URegraCRUDOs.pas',
   URegraCRUDEquipamento in 'Modelo\Regra\URegraCRUDEquipamento.pas',
   URegraCRUDTecnico in 'Modelo\Regra\URegraCRUDTecnico.pas',
-  URegraCRUDUsuario in 'Modelo\Regra\URegraCRUDUsuario.pas';
+  URegraCRUDUsuario in 'Modelo\Regra\URegraCRUDUsuario.pas',
+  UFrmCadastroMaterial in 'VisaoControle\UFrmCadastroMaterial.pas' {FrmCadastroMaterial};
 
 {$R *.res}
 
+{$IFDEF PROD}
 var
   frmLogin: TfrmLogin;
-  RepositorioUsuario: TRepositorioUsuario;
-  USUARIO: TUSUARIO;
+{$ENDIF}
 begin
-  {$DEFINE PROD}
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TdmEntra21, dmEntra21);
-  RepositorioUsuario := TRepositorioUsuario.Create;
-
-  USUARIO             := TUSUARIO.Create;
-  USUARIO.NOME        := 'Lucas Fernando Gonçalves';
-  USUARIO.SENHA       := '9852120luc';
-
-
-
-  RepositorioUsuario.Insere(USUARIO);
-
-  USUARIO.SENHA := '985212000Luc';
-  RepositorioUSUARIO.Atualiza(USUARIO);
-
-  RepositorioUSUARIO.Retorna(USUARIO.ID);
-  dmEntra21.IniciaTransacao;
-  try
-    RepositorioUSUARIO.Exclui(USUARIO.ID);
-  finally
-    dmEntra21.FinalizaTransacao;
-  end;
-
   {$IFDEF PROD}
   frmLogin := TfrmLogin.Create(nil);
   if frmLogin.ShowModal = mrYes then

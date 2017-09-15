@@ -23,7 +23,7 @@ select c.id           as "Cód."
     
  create view vw_material as 
  select id		  	     as "Cód."
-       ,descricao        as "Decrição"
+       ,descricao        as "Descrição"
        ,valor_unitario   as "Valor Unitario"
     from material;
     

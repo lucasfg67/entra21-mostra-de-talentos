@@ -15,7 +15,7 @@ select c.id           as "Cód."
        ,cl.tipo_pessoa  as "Tipo de Pessoa"
     from cliente cl inner join cidade c on (c.id = cl.id_cidade); 
     
- create view vw_usario as 
+ create view vw_usuario as 
  select id    as "Cód."
  	   ,nome  as "Nome"
  	   ,senha as "Senha"

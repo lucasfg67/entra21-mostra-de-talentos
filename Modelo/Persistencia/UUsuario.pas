@@ -19,7 +19,7 @@ const
   FLD_USUARIO_NOME  = 'NOME';
   FLD_USUARIO_SENHA = 'SENHA';
 
-  VW_USUARIO        = 'USUARIO';
+  VW_USUARIO        = 'VW_USUARIO';
   VW_USUARIO_NOME   = 'Nome';
   VW_USUARIO_SENHA  = 'Senha';
   VW_USUARIO_ID     = 'Cód.';

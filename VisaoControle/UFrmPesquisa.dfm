@@ -71,7 +71,7 @@ object frmPesquisa: TfrmPesquisa
       Caption = 'Op'#231#227'o'
     end
     object lbIgualA: TLabel
-      Left = 170
+      Left = 240
       Top = 24
       Width = 32
       Height = 13
@@ -79,7 +79,7 @@ object frmPesquisa: TfrmPesquisa
       Caption = 'Igual a'
     end
     object edPesquisa: TEdit
-      Left = 210
+      Left = 280
       Top = 21
       Width = 233
       Height = 19
@@ -97,7 +97,7 @@ object frmPesquisa: TfrmPesquisa
     object cbOpcoes: TComboBox
       Left = 57
       Top = 21
-      Width = 109
+      Width = 177
       Height = 21
       BevelInner = bvNone
       BevelOuter = bvNone

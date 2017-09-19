@@ -18,6 +18,7 @@ type
   private
     FMATERIAL: TMATERIAL;
     FRegraCRUDMaterial: TRegraCRUDMaterial;
+
   protected
     procedure Inicializa; override;
     procedure Finaliza; override;

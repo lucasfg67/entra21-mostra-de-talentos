@@ -30,6 +30,7 @@ implementation
 uses
    UDM
  , SysUtils
+ , UUtilitarios
  ;
 
 { TRepositorioCliente }
@@ -55,9 +56,8 @@ begin
     coCLIENTE.SOLICITANTE := FieldByName(FLD_CLIENTE_SOLICITANTE).AsString;
     coCLIENTE.CNPJ_CPF    := FieldByName(FLD_CLIENTE_CNPJ_CPF).AsString;
     coCLIENTE.TELEFONE    := FieldByName(FLD_CLIENTE_TELEFONE).AsString;
-    coCLIENTE.ID          := FieldByName(FLD_CLIENTE_ID_CIDADE).AsInteger;
     coCLIENTE.ENDEREÇO    := FieldByName(FLD_CLIENTE_ENDERECO).AsString;
-    cOCLIENTE.TIPO_PESSOA := FieldByName(FLD_CLIENTE_TIPO_PESSOA).AsString;
+    cOCLIENTE.TIPO_PESSOA := TTipoPessoa(FieldByName(FLD_CLIENTE_TIPO_PESSOA).AsInteger);
     coCLIENTE.CIDADE      := TCIDADE(FRepositorioCidade.Retorna(FieldByName(FLD_CLIENTE_ID_CIDADE).AsInteger));
   end;
 end;
@@ -68,14 +68,13 @@ begin
   Inherited;
   with coSQLQuery do
   begin
-    ParamByName(FLD_CLIENTE_NOME).AsString        := coCLIENTE.NOME;
-    ParamByName(FLD_CLIENTE_SOLICITANTE).AsString := coCLIENTE.SOLICITANTE;
-    ParamByName(FLD_CLIENTE_CNPJ_CPF).AsString    := coCLIENTE.CNPJ_CPF;
-    ParamByName(FLD_CLIENTE_TELEFONE).AsString    := coCLIENTE.TELEFONE;
-    ParamByName(FLD_CLIENTE_ID_CIDADE).AsInteger  := coCLIENTE.ID;
-    ParamByName(FLD_CLIENTE_ENDERECO).AsString    := coCLIENTE.ENDEREÇO;
-    ParamByName(FLD_CLIENTE_TIPO_PESSOA).AsString := coCLIENTE.TIPO_PESSOA;
-    ParamByName(FLD_CLIENTE_ID_CIDADE).AsInteger  := coCLIENTE.CIDADE.ID;
+    ParamByName(FLD_CLIENTE_NOME).AsString         := coCLIENTE.NOME;
+    ParamByName(FLD_CLIENTE_SOLICITANTE).AsString  := coCLIENTE.SOLICITANTE;
+    ParamByName(FLD_CLIENTE_CNPJ_CPF).AsString     := coCLIENTE.CNPJ_CPF;
+    ParamByName(FLD_CLIENTE_TELEFONE).AsString     := coCLIENTE.TELEFONE;
+    ParamByName(FLD_CLIENTE_ENDERECO).AsString     := coCLIENTE.ENDEREÇO;
+    ParamByName(FLD_CLIENTE_TIPO_PESSOA).AsInteger := Integer(coCLIENTE.TIPO_PESSOA);
+    ParamByName(FLD_CLIENTE_ID_CIDADE).AsInteger   := coCLIENTE.CIDADE.ID;
   end;
 end;
 

@@ -26,12 +26,18 @@ type
     class function ComponenteValido(const coCompClass: TClass): Boolean;
   end;
 
+  TTipoPessoa = (tpFisica, tpJuridica);
+
 const
+  CNT_TIPO_INSCRICAO_PESSOA:
+    array[TTipoPessoa] of String = (STR_CLIENTE_CPF, STR_CLIENTE_CNPJ);
+
   CNT_TIPO_OPERACAO_USUARIO:
     array[TTipoOperacaoUsuario] of String = ('',
                                              STR_GRAVADO,
                                              STR_ATUALIZADO,
                                              STR_EXCLUIDO);
+
 const
   CNT_COMPONENTES_VALIDADOS: array[0..8]
     of TClass = (TEdit

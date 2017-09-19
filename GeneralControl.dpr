@@ -46,7 +46,12 @@ uses
   URegraCRUDEquipamento in 'Modelo\Regra\URegraCRUDEquipamento.pas',
   URegraCRUDTecnico in 'Modelo\Regra\URegraCRUDTecnico.pas',
   URegraCRUDUsuario in 'Modelo\Regra\URegraCRUDUsuario.pas',
-  UFrmCadastroMaterial in 'VisaoControle\UFrmCadastroMaterial.pas' {FrmCadastroMaterial};
+  UFrmCadastroMaterial in 'VisaoControle\UFrmCadastroMaterial.pas' {FrmCadastroMaterial},
+  UFrmCadastroCliente in 'VisaoControle\UFrmCadastroCliente.pas' {FrmCadastroCliente},
+  UFrmCadastroEquipamento in 'VisaoControle\UFrmCadastroEquipamento.pas' {FrmCadastroEquipamento},
+  UFrmCadastroUsuario in 'VisaoControle\UFrmCadastroUsuario.pas' {FrmCadastroUsuario},
+  UFrmCadastroTecnico in 'VisaoControle\UFrmCadastroTecnico.pas' {FrmCadastroTecnico},
+  UFrmCadastroOS in 'VisaoControle\UFrmCadastroOS.pas' {FrmCadastroOS};
 
 {$R *.res}
 

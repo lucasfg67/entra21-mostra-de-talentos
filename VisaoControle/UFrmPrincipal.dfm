@@ -36,6 +36,26 @@ object FrmPrincipal: TFrmPrincipal
         Caption = 'Material'
         OnClick = miMaterialClick
       end
+      object miCliente: TMenuItem
+        Caption = 'Cliente'
+        OnClick = miClienteClick
+      end
+      object miEquipamento: TMenuItem
+        Caption = 'Equipamento'
+        OnClick = miEquipamentoClick
+      end
+      object miUsuario: TMenuItem
+        Caption = 'Usu'#225'rio'
+        OnClick = miUsuarioClick
+      end
+      object miTecnico: TMenuItem
+        Caption = 'Tecnico'
+        OnClick = miTecnicoClick
+      end
+      object miOS: TMenuItem
+        Caption = 'OS'
+        OnClick = miOSClick
+      end
     end
     object miSair: TMenuItem
       Caption = '&Sair'

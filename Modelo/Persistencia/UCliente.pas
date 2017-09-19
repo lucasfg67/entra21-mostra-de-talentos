@@ -4,7 +4,8 @@ interface
 
 uses
     UEntidade
-   ,UCidade
+  , UCidade
+  , UUtilitarios
   ;
 
 type
@@ -16,7 +17,7 @@ type
     TELEFONE    : String;
     CIDADE      : TCIDADE;
     ENDEREÇO    : String;
-    TIPO_PESSOA : String;
+    TIPO_PESSOA : TTipoPessoa;
 
     constructor Create;  override;
     destructor  Destroy; override;
@@ -33,7 +34,7 @@ const
   FLD_CLIENTE_ENDERECO    = 'ENDERECO';
   FLD_CLIENTE_TIPO_PESSOA = 'TIPO_PESSOA';
 
-  VW_CLIENTE              = 'CLIENTE';
+  VW_CLIENTE              = 'VW_CLIENTE';
   VW_CLIENTE_NOME         = 'Nome';
   VW_CLIENTE_SOLICITANTE  = 'Solicitante';
   VW_CLIENTE_ID           = 'Cód.';

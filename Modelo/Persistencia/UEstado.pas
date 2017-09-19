@@ -25,7 +25,7 @@ const
   FLD_ESTADO_UF      = 'UF';
   FLD_ESTADO_PAIS_ID = 'ID_PAIS';
 
-  VW_ESTADO          = 'ESTADO';
+  VW_ESTADO          = 'VW_ESTADO';
   VW_ESTADO_NOME     = 'Estado';
   VW_ESTADO_UF       = 'UF';
   VW_ESTADO_ID_PAIS  = 'País';

@@ -23,6 +23,7 @@ implementation
 
 uses
    UDM
+ , Math
  ;
 
   {TRepositorioMaterial}
@@ -39,7 +40,7 @@ begin
   with FSQLSelect do
   begin
     coMATERIAL.DESCRICAO      := FieldByName(FLD_MATERIAL_DESCRICAO).AsString;
-    coMATERIAL.VALOR_UNITARIO := FieldByName (FLD_MATERIAL_VALOR_UNITARIO).AsFloat;
+    coMATERIAL.VALOR_UNITARIO := RoundTo(FieldByName(FLD_MATERIAL_VALOR_UNITARIO).AsFloat, -2);
   end;
 end;
 

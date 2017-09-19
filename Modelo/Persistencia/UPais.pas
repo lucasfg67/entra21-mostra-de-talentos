@@ -16,7 +16,7 @@ const
   FLD_PAIS_NOME  = 'NOME';
   FLD_PAIS_SIGLA = 'SIGLA';
 
-  VW_PAIS        = 'PAIS';
+  VW_PAIS        = 'VW_PAIS';
   VW_PAIS_NOME   = 'País';
   VW_PAIS_SIGLA  = 'Sigla';
   VW_PAIS_ID     = 'Cód.';

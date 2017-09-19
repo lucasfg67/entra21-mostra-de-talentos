@@ -39,8 +39,8 @@ resourcestring
   STR_CLIENTE_TELEFONE_NAO_INFORMADO      = 'Campo TELEFONE não informado';
   STR_CLIENTE_CIDADE_NAO_INFORMADO        = 'Campo CIDADE não informado';
   STR_CLIENTE_ENDERECO_NAO_INFORMADO      = 'Campo ENDEREÇO não informado';
-  STR_CLIENTE_TIPO_PESSOA_NAO_SELECIONADO = 'Selecione um TIPO DE PESSOA';
-
+  STR_CLIENTE_CPF                         = 'CPF';
+  STR_CLIENTE_CNPJ                        = 'CNPJ';
   //Os
   STR_OS_CLIENTE_NAO_INFORMADO           = 'Campo CLIENTE não informado';
   STR_OS_EQUIPAMENTO_NAO_INFORMADO       = 'Campo EQUIPAMENTO não informado';

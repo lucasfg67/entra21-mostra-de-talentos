@@ -24,7 +24,7 @@ const
   FLD_CIDADE_NOME      = 'NOME';
   FLD_CIDADE_ID_ESTADO = 'ID_ESTADO';
 
-  VW_CIDADE            = 'CIDADE';
+  VW_CIDADE            = 'VW_CIDADE';
   VW_CIDADE_NOME       = 'Nome';
   VW_CIDADE_ID         = 'Cód.';
   VW_CIDADE_ID_ESTADO  = 'Estado';

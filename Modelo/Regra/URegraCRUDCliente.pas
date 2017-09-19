@@ -77,9 +77,6 @@ begin
 
   if Trim (coCliente.ENDEREÇO) = EmptyStr Then
     raise EValidacaoNegocio.Create(STR_CLIENTE_ENDERECO_NAO_INFORMADO);
-
-  if Trim (coCliente.TIPO_PESSOA) = EmptyStr Then
-    raise EValidacaoNegocio.Create(STR_CLIENTE_TIPO_PESSOA_NAO_SELECIONADO);
 end;
 
 end.

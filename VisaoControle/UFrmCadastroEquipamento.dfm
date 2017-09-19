@@ -1,9 +1,9 @@
-inherited FrmCadastroMaterial: TFrmCadastroMaterial
-  Caption = 'CADASTRO DE MATERIAL'
-  ClientHeight = 233
+inherited FrmCadastroEquipamento: TFrmCadastroEquipamento
+  Caption = 'CADASTRO DE EQUIPAMENTO'
+  ClientHeight = 292
   ClientWidth = 590
   ExplicitWidth = 606
-  ExplicitHeight = 272
+  ExplicitHeight = 331
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnlCabecalho: TPanel
@@ -12,10 +12,10 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
     ParentBackground = False
     ExplicitWidth = 590
     inherited lbCabecalho: TLabel
-      Width = 211
-      Caption = 'CADASTRO DE MATERIAL'
+      Width = 247
+      Caption = 'CADASTRO DE EQUIPAMENTO'
       Font.Color = clBlack
-      ExplicitWidth = 211
+      ExplicitWidth = 247
     end
   end
   inherited gbLocalizar: TGroupBox
@@ -29,11 +29,11 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
     end
   end
   inherited pnlBotoes: TPanel
-    Top = 192
+    Top = 251
     Width = 590
     Color = clMedGray
     ParentBackground = False
-    ExplicitTop = 192
+    ExplicitTop = 251
     ExplicitWidth = 590
     inherited btnLimpar: TBitBtn
       Left = 355
@@ -56,7 +56,7 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
     Left = 0
     Top = 86
     Width = 590
-    Height = 106
+    Height = 165
     Align = alClient
     Caption = 'Informa'#231#245'es'
     Color = clActiveCaption
@@ -69,15 +69,15 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    object edDescricao: TLabeledEdit
-      Left = 102
+    object edNome: TLabeledEdit
+      Left = 111
       Top = 25
       Width = 325
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 55
+      EditLabel.Width = 33
       EditLabel.Height = 16
-      EditLabel.Caption = 'Descri'#231#227'o'
+      EditLabel.Caption = 'Nome'
       EditLabel.Font.Charset = DEFAULT_CHARSET
       EditLabel.Font.Color = clWindowText
       EditLabel.Font.Height = -13
@@ -90,19 +90,19 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
       Font.Name = 'Tahoma'
       Font.Style = []
       LabelPosition = lpLeft
-      MaxLength = 100
+      MaxLength = 60
       ParentFont = False
       TabOrder = 0
     end
-    object edValorUnitario: TLabeledEdit
-      Left = 102
+    object edMarca: TLabeledEdit
+      Left = 111
       Top = 58
-      Width = 135
+      Width = 325
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 78
+      EditLabel.Width = 35
       EditLabel.Height = 16
-      EditLabel.Caption = 'Valor Unitario'
+      EditLabel.Caption = 'Marca'
       EditLabel.Font.Charset = DEFAULT_CHARSET
       EditLabel.Font.Color = clWindowText
       EditLabel.Font.Height = -13
@@ -119,8 +119,33 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
       ParentFont = False
       TabOrder = 1
     end
+    object edN_Serie: TLabeledEdit
+      Left = 111
+      Top = 91
+      Width = 325
+      Height = 21
+      Color = clBtnFace
+      EditLabel.Width = 97
+      EditLabel.Height = 16
+      EditLabel.Caption = 'N'#250'mero de S'#233'rie'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWindowText
+      EditLabel.Font.Height = -13
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      LabelPosition = lpLeft
+      MaxLength = 60
+      ParentFont = False
+      TabOrder = 2
+    end
   end
   inherited pmOpcoes: TPopupMenu
-    Left = 520
+    Left = 528
   end
 end

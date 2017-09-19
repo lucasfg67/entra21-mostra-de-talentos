@@ -19,7 +19,7 @@ const
   FLD_TECNICO_NOME       = 'NOME';
   FLD_TECNICO_VALOR_HORA = 'VALOR_HORA';
 
-  VW_TECNICO            = 'TECNICO';
+  VW_TECNICO            = 'VW_TECNICO';
   VW_TECNICO_NOME       = 'Nome';
   VW_TECNICO_VALOR_HORA = 'Preço Hora';
   VW_TECNICO_ID          = 'Cód.';

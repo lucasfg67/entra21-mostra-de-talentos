@@ -10,18 +10,27 @@ inherited FrmCadastroTecnico: TFrmCadastroTecnico
     Width = 589
     Color = clMedGray
     ParentBackground = False
+    ExplicitWidth = 589
     inherited lbCabecalho: TLabel
       Width = 198
       Caption = 'CADASTRO DE TECNICO'
-      Font.Color = clBlack
       ExplicitWidth = 198
     end
   end
   inherited gbLocalizar: TGroupBox
     Width = 589
-    Color = clActiveCaption
+    Color = clTeal
     ParentBackground = False
     ParentColor = False
+    ExplicitWidth = 589
+    inherited lbCodigo: TLabel
+      Width = 37
+      Height = 14
+      Font.Color = clWhite
+      Font.Height = -12
+      ExplicitWidth = 37
+      ExplicitHeight = 14
+    end
     inherited edCodigo: TEdit
       Color = clBtnFace
     end
@@ -31,17 +40,23 @@ inherited FrmCadastroTecnico: TFrmCadastroTecnico
     Width = 589
     Color = clMedGray
     ParentBackground = False
+    ExplicitTop = 212
+    ExplicitWidth = 589
     inherited btnLimpar: TBitBtn
       Left = 354
+      ExplicitLeft = 354
     end
     inherited btnExcluir: TBitBtn
       Left = 237
+      ExplicitLeft = 237
     end
     inherited btnGravar: TBitBtn
       Left = 120
+      ExplicitLeft = 120
     end
     inherited btnSair: TBitBtn
       Left = 471
+      ExplicitLeft = 471
     end
   end
   object gbInformacoes: TGroupBox [3]
@@ -51,7 +66,7 @@ inherited FrmCadastroTecnico: TFrmCadastroTecnico
     Height = 126
     Align = alClient
     Caption = 'Informa'#231#245'es'
-    Color = clActiveCaption
+    Color = clTeal
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -61,21 +76,18 @@ inherited FrmCadastroTecnico: TFrmCadastroTecnico
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    ExplicitLeft = -1
-    ExplicitWidth = 590
-    ExplicitHeight = 123
     object edNome: TLabeledEdit
-      Left = 80
+      Left = 104
       Top = 25
       Width = 325
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 33
-      EditLabel.Height = 16
+      EditLabel.Width = 32
+      EditLabel.Height = 14
       EditLabel.Caption = 'Nome'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False
@@ -90,17 +102,17 @@ inherited FrmCadastroTecnico: TFrmCadastroTecnico
       TabOrder = 0
     end
     object edValorHora: TLabeledEdit
-      Left = 80
+      Left = 104
       Top = 58
       Width = 145
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 62
-      EditLabel.Height = 16
+      EditLabel.Width = 57
+      EditLabel.Height = 14
       EditLabel.Caption = 'Valor/Hora'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False

@@ -14,16 +14,23 @@ inherited FrmCadastroEquipamento: TFrmCadastroEquipamento
     inherited lbCabecalho: TLabel
       Width = 247
       Caption = 'CADASTRO DE EQUIPAMENTO'
-      Font.Color = clBlack
       ExplicitWidth = 247
     end
   end
   inherited gbLocalizar: TGroupBox
     Width = 590
-    Color = clActiveCaption
+    Color = clTeal
     ParentBackground = False
     ParentColor = False
     ExplicitWidth = 590
+    inherited lbCodigo: TLabel
+      Width = 37
+      Height = 14
+      Font.Color = clWhite
+      Font.Height = -12
+      ExplicitWidth = 37
+      ExplicitHeight = 14
+    end
     inherited edCodigo: TEdit
       Color = clBtnFace
     end
@@ -59,7 +66,7 @@ inherited FrmCadastroEquipamento: TFrmCadastroEquipamento
     Height = 165
     Align = alClient
     Caption = 'Informa'#231#245'es'
-    Color = clActiveCaption
+    Color = clTeal
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -69,18 +76,18 @@ inherited FrmCadastroEquipamento: TFrmCadastroEquipamento
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    object edNome: TLabeledEdit
-      Left = 111
-      Top = 25
-      Width = 325
+    object edMarca: TLabeledEdit
+      Left = 104
+      Top = 58
+      Width = 153
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 33
-      EditLabel.Height = 16
-      EditLabel.Caption = 'Nome'
+      EditLabel.Width = 31
+      EditLabel.Height = 14
+      EditLabel.Caption = 'Marca'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False
@@ -94,18 +101,18 @@ inherited FrmCadastroEquipamento: TFrmCadastroEquipamento
       ParentFont = False
       TabOrder = 0
     end
-    object edMarca: TLabeledEdit
-      Left = 111
-      Top = 58
-      Width = 325
+    object edN_Serie: TLabeledEdit
+      Left = 104
+      Top = 91
+      Width = 153
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 35
-      EditLabel.Height = 16
-      EditLabel.Caption = 'Marca'
+      EditLabel.Width = 92
+      EditLabel.Height = 14
+      EditLabel.Caption = 'N'#250'mero de S'#233'rie'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False
@@ -119,18 +126,18 @@ inherited FrmCadastroEquipamento: TFrmCadastroEquipamento
       ParentFont = False
       TabOrder = 1
     end
-    object edN_Serie: TLabeledEdit
-      Left = 111
-      Top = 91
+    object edNome: TLabeledEdit
+      Left = 104
+      Top = 25
       Width = 325
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 97
-      EditLabel.Height = 16
-      EditLabel.Caption = 'N'#250'mero de S'#233'rie'
+      EditLabel.Width = 32
+      EditLabel.Height = 14
+      EditLabel.Caption = 'Nome'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False

@@ -13,9 +13,9 @@ uses
 type
   TFrmCadastroEquipamento = class(TFrmCRUD)
     gbInformacoes: TGroupBox;
-    edNome: TLabeledEdit;
     edMarca: TLabeledEdit;
     edN_Serie: TLabeledEdit;
+    edNome: TLabeledEdit;
   protected
     FEQUIPAMENTO: TEQUIPAMENTO;
     FRegraCRUDEquipamento: TRegraCRUDEquipamento;

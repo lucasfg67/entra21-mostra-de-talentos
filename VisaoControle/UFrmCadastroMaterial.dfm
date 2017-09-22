@@ -14,16 +14,23 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
     inherited lbCabecalho: TLabel
       Width = 211
       Caption = 'CADASTRO DE MATERIAL'
-      Font.Color = clBlack
       ExplicitWidth = 211
     end
   end
   inherited gbLocalizar: TGroupBox
     Width = 590
-    Color = clActiveCaption
+    Color = clTeal
     ParentBackground = False
     ParentColor = False
     ExplicitWidth = 590
+    inherited lbCodigo: TLabel
+      Width = 37
+      Height = 14
+      Font.Color = clWhite
+      Font.Height = -12
+      ExplicitWidth = 37
+      ExplicitHeight = 14
+    end
     inherited edCodigo: TEdit
       Color = clBtnFace
     end
@@ -59,7 +66,7 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
     Height = 106
     Align = alClient
     Caption = 'Informa'#231#245'es'
-    Color = clActiveCaption
+    Color = clTeal
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -70,17 +77,17 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
     ParentFont = False
     TabOrder = 3
     object edDescricao: TLabeledEdit
-      Left = 102
-      Top = 25
+      Left = 104
+      Top = 26
       Width = 325
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 55
-      EditLabel.Height = 16
+      EditLabel.Width = 51
+      EditLabel.Height = 14
       EditLabel.Caption = 'Descri'#231#227'o'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False
@@ -95,17 +102,17 @@ inherited FrmCadastroMaterial: TFrmCadastroMaterial
       TabOrder = 0
     end
     object edValorUnitario: TLabeledEdit
-      Left = 102
+      Left = 104
       Top = 58
       Width = 135
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 78
-      EditLabel.Height = 16
+      EditLabel.Width = 72
+      EditLabel.Height = 14
       EditLabel.Caption = 'Valor Unitario'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False

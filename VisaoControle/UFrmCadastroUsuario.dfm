@@ -14,16 +14,23 @@ inherited FrmCadastroUsuario: TFrmCadastroUsuario
     inherited lbCabecalho: TLabel
       Width = 201
       Caption = 'CADASTRO DE USU'#193'RIO'
-      Font.Color = clBlack
       ExplicitWidth = 201
     end
   end
   inherited gbLocalizar: TGroupBox
     Width = 591
-    Color = clActiveCaption
+    Color = clTeal
     ParentBackground = False
     ParentColor = False
     ExplicitWidth = 591
+    inherited lbCodigo: TLabel
+      Width = 37
+      Height = 14
+      Font.Color = clWhite
+      Font.Height = -12
+      ExplicitWidth = 37
+      ExplicitHeight = 14
+    end
     inherited edCodigo: TEdit
       Color = clBtnFace
     end
@@ -59,7 +66,7 @@ inherited FrmCadastroUsuario: TFrmCadastroUsuario
     Height = 110
     Align = alClient
     Caption = 'Informa'#231#245'es'
-    Color = clActiveCaption
+    Color = clTeal
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -69,19 +76,18 @@ inherited FrmCadastroUsuario: TFrmCadastroUsuario
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    ExplicitTop = 84
     object edNome: TLabeledEdit
       Left = 104
       Top = 28
       Width = 325
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 27
-      EditLabel.Height = 13
+      EditLabel.Width = 32
+      EditLabel.Height = 14
       EditLabel.Caption = 'Nome'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -11
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False
@@ -97,16 +103,16 @@ inherited FrmCadastroUsuario: TFrmCadastroUsuario
     end
     object edSenha: TLabeledEdit
       Left = 104
-      Top = 58
+      Top = 61
       Width = 129
       Height = 21
       Color = clBtnFace
-      EditLabel.Width = 30
-      EditLabel.Height = 13
+      EditLabel.Width = 34
+      EditLabel.Height = 14
       EditLabel.Caption = 'Senha'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -11
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False

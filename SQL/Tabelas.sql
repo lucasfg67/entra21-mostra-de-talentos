@@ -6,7 +6,7 @@
 	
 	constraint pk_equipamento primary key (id)	
 );
-drop table equipamento;
+
 create generator gen_equipamento_id;
 	
 create table tecnico(
@@ -75,7 +75,7 @@ create table os(
 	
 	constraint pk_os primary key (id),
 	
-	constraint fk_os_cliente foreign key 
+	constraint fk_os_dados_cliente foreign key 
 		(id_cliente) references cliente(id),
 		
 	constraint fk_os_equipamento foreign key 
@@ -126,10 +126,16 @@ create generator gen_os_material_id;
 create table usuario (
 	id    integer     not null,
 	nome  varchar(40) not null,
+	login varchar(60) not null,
 	senha varchar(40) not null,
+	id_papel integer  not null,
 	
-	constraint pk_usuario primary key (id)
+	constraint pk_usuario primary key (id),
+	constraint uk_usuario_login unique (login),
+	constraint fk_usuario_papel foreign key (id_papel) references papel(id)
+	
 );
+
 
 create generator gen_usuario_id;
 
@@ -192,3 +198,32 @@ create table estado (
 );
 
 create generator gen_estado;
+
+
+
+create table papel (
+	id integer not null,
+	descricao varchar(60) not null,
+	
+	constraint pk_papel primary key (id)
+);
+
+
+create table permissao (
+	id integer not null,
+	descricao varchar(60) not null,
+	
+	constraint pk_permissao primary key (id)
+);
+
+
+create table papel_permissao (
+	id_papel integer not null,
+	id_permissao integer not null,
+	
+	constraint pk_papel_permissao primary key (id_papel, id_permissao),
+	constraint fk_papel_permissao_papel foreign key (id_papel) references papel(id),
+	constraint fk_papel_permissao_permissao foreign key (id_permissao) references permissao(id)
+);
+
+select * from usuario;

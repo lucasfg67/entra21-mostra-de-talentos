@@ -15,8 +15,9 @@ type
     lbSenha: TLabel;
     lbNome: TLabel;
     btnAcessar: TButton;
-    btnSair: TButton;
+    btnCancelar: TButton;
     procedure btnAcessarClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
 
   public
@@ -31,32 +32,27 @@ implementation
 {$R *.dfm}
 
 uses
-  UDM;
+    UUsuarioLogado
+  , UDialogo
+  ;
 
 procedure TfrmLogin.btnAcessarClick(Sender: TObject);
 begin
-  with dmEntra21 do
-  begin
-    //SQLSelect.SQL.Clear;
-    //SQLSelect.SQL.Add('select * from usuario');
-    //SQLSelect.SQL.Add( 'where nome    = :nome');
-    //SQLSelect.SQL.Add(   'and senha = :senha');
+  try
+    TUsuarioLogado.Unico.RealizaLogin(edUsuario.Text, edSenha.Text);
 
-    //SQLSelect.Prepared := True;
-    //SQLSelect.ParamByName('nome').AsString := edUsuario.Text;
-    //SQLSelect.ParamByName('senha').AsString := edSenha.Text;
-    //SQLSelect.Open;
-
-    if SQLSelect.Eof then
-      begin
-        ShowMessage('Usuário ou Senha informados são inválidos')
-      end
-    else
-      begin
-        ModalResult := mrYes;
-        CloseModal;
-      end;
+    ModalResult := mrYes;
+    CloseModal;
+  except
+    on E: Exception do
+      TDialogo.Excecao(E);
   end;
+end;
+
+procedure TfrmLogin.btnCancelarClick(Sender: TObject);
+begin
+   ModalResult := mrCancel;
+   CloseModal;
 end;
 
 end.

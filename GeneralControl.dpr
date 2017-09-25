@@ -1,6 +1,6 @@
 program GeneralControl;
 
-{$DEFINE DESENV}
+
 
 uses
   Forms,
@@ -51,17 +51,21 @@ uses
   UFrmCadastroEquipamento in 'VisaoControle\UFrmCadastroEquipamento.pas' {FrmCadastroEquipamento},
   UFrmCadastroUsuario in 'VisaoControle\UFrmCadastroUsuario.pas' {FrmCadastroUsuario},
   UFrmCadastroTecnico in 'VisaoControle\UFrmCadastroTecnico.pas' {FrmCadastroTecnico},
-  UFrmCadastroOS in 'VisaoControle\UFrmCadastroOS.pas' {FrmCadastroOS};
+  UFrmCadastroOS in 'VisaoControle\UFrmCadastroOS.pas' {FrmCadastroOS},
+  UPapel in 'Modelo\Persistencia\UPapel.pas',
+  URepositorioPapel in 'Modelo\Persistencia\URepositorioPapel.pas',
+  UUsuarioLogado in 'Modelo\UUsuarioLogado.pas',
+  URepositorioPapelPermissao in 'Modelo\Persistencia\URepositorioPapelPermissao.pas';
 
 {$R *.res}
 
-{$IFDEF PROD}
-var
-  frmLogin: TfrmLogin;
-{$ENDIF}
+
+
+
+
 begin
+  {$DEFINE PROD}
   Application.Initialize;
-  Application.MainFormOnTaskbar := True;
   Application.CreateForm(TdmEntra21, dmEntra21);
   {$IFDEF PROD}
   frmLogin := TfrmLogin.Create(nil);
@@ -77,6 +81,7 @@ begin
       Application.Terminate;
     end;
   {$ELSE}
+  TUsuarioLogado.Unico.RealizaLogin('admin', 'admin');
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.Run;
   {$ENDIF}

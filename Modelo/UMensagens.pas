@@ -1,4 +1,4 @@
-unit UMensagens;
+  unit UMensagens;
 
 interface
 
@@ -70,8 +70,13 @@ resourcestring
   STR_TECNICO_VALOR_HORA_NAO_INFORMADO = 'Campo VALOR HORA não informado';
 
   //Usuario
-  STR_USUARIO_NOME_NAO_INFORMADO  = 'Campo NOME não informado';
-  STR_USUARIO_SENHA_NAO_INFORMADO = 'Campo SENHA não informado';
+  STR_SENHA_NAO_SEGURA           = 'Senha digitada não é segura, senha deve ter no mínimo %d caracteres';
+  STR_SENHAS_NAO_CONFEREM        = 'Senhas não conferem';
+  STR_USUARIO_NOME_NAO_INFORMADO = 'Nome do usuário não foi informado';
+  STR_SENHA_ATUAL_NAO_CONFERE    = 'Senha atual não confere';
+
+  //Login
+  STR_USUARIO_OU_SENHA_SAO_INVALIDOS = 'Usuário ou senha são inválidos';
 
 
 

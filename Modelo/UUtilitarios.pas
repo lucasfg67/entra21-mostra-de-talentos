@@ -26,6 +26,26 @@ type
     class function ComponenteValido(const coCompClass: TClass): Boolean;
   end;
 
+  TPapelUsuario = (tpluAdministrativo,
+                   tpluAuxiliarAdministrativo,
+                   tpluTecnico);
+
+  TListaPapeisUsuario = set of TPapelUsuario;
+
+  TPermissaoUsuario = (tpruCadastrarMaterial,
+                       tpruCadastrarCiente,
+                       tpruCadastrarEquipamento,
+                       tpruCadastrarUsuario,
+                       tpruCadastrarTecnico,
+                       tpruCadastrarOs);
+
+  TListaPermissoesUsuario = set of TPermissaoUsuario;
+
+
+
+
+
+
   TTipoPessoa = (tpFisica, tpJuridica);
 
 const

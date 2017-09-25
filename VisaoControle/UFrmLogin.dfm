@@ -1796,22 +1796,23 @@ object frmLogin: TfrmLogin
     TabOrder = 1
   end
   object btnAcessar: TButton
-    Left = 78
-    Top = 206
-    Width = 198
-    Height = 43
+    Left = 207
+    Top = 241
+    Width = 73
+    Height = 27
     Caption = 'Acessar'
     Default = True
     TabOrder = 2
     OnClick = btnAcessarClick
   end
-  object btnSair: TButton
-    Left = 312
-    Top = 225
-    Width = 47
-    Height = 24
-    Caption = 'Sair'
+  object btnCancelar: TButton
+    Left = 286
+    Top = 242
+    Width = 73
+    Height = 26
+    Caption = 'Cancelar'
     ModalResult = 2
     TabOrder = 3
+    OnClick = btnCancelarClick
   end
 end

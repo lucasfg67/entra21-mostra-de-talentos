@@ -10,7 +10,7 @@ inherited FrmCadastroOS: TFrmCadastroOS
     Width = 590
     Color = clMedGray
     ParentBackground = False
-    ExplicitWidth = 609
+    ExplicitWidth = 590
     inherited lbCabecalho: TLabel
       Width = 146
       Caption = 'CADASTRO DE OS'
@@ -23,7 +23,7 @@ inherited FrmCadastroOS: TFrmCadastroOS
     Color = clActiveCaption
     ParentBackground = False
     ParentColor = False
-    ExplicitWidth = 609
+    ExplicitWidth = 590
     inherited edCodigo: TEdit
       Color = clBtnFace
     end
@@ -33,23 +33,23 @@ inherited FrmCadastroOS: TFrmCadastroOS
     Width = 590
     Color = clMedGray
     ParentBackground = False
-    ExplicitTop = 341
-    ExplicitWidth = 609
+    ExplicitTop = 446
+    ExplicitWidth = 590
     inherited btnLimpar: TBitBtn
       Left = 355
-      ExplicitLeft = 374
+      ExplicitLeft = 355
     end
     inherited btnExcluir: TBitBtn
       Left = 238
-      ExplicitLeft = 257
+      ExplicitLeft = 238
     end
     inherited btnGravar: TBitBtn
       Left = 121
-      ExplicitLeft = 140
+      ExplicitLeft = 121
     end
     inherited btnSair: TBitBtn
       Left = 472
-      ExplicitLeft = 491
+      ExplicitLeft = 472
     end
   end
   object pgOrdemServico: TPageControl [3]
@@ -57,13 +57,11 @@ inherited FrmCadastroOS: TFrmCadastroOS
     Top = 86
     Width = 590
     Height = 360
-    ActivePage = tsGeral
+    ActivePage = tsTecnicos
     Align = alClient
     TabOrder = 3
-    ExplicitWidth = 609
     object tsGeral: TTabSheet
       Caption = 'Geral'
-      ExplicitWidth = 601
       object gbInformacoes: TGroupBox
         Left = 0
         Top = 0
@@ -81,10 +79,6 @@ inherited FrmCadastroOS: TFrmCadastroOS
         ParentColor = False
         ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 8
-        ExplicitTop = 254
-        ExplicitWidth = 609
-        ExplicitHeight = 255
         object lbDataEntrada: TLabel
           Left = 52
           Top = 34
@@ -176,7 +170,7 @@ inherited FrmCadastroOS: TFrmCadastroOS
           OnExit = edEquipamentoExit
         end
         object edDataEntrada: TDateTimePicker
-          Left = 120
+          Left = 122
           Top = 31
           Width = 150
           Height = 21
@@ -267,7 +261,6 @@ inherited FrmCadastroOS: TFrmCadastroOS
     object tsTecnicos: TTabSheet
       Caption = 'T'#233'cnicos'
       ImageIndex = 1
-      ExplicitWidth = 601
       object pnlTecnicos: TPanel
         Left = 0
         Top = 0
@@ -296,14 +289,13 @@ inherited FrmCadastroOS: TFrmCadastroOS
         GridLines = True
         TabOrder = 1
         ViewStyle = vsReport
-        ExplicitTop = 144
-        ExplicitHeight = 188
+        ExplicitTop = 104
+        ExplicitHeight = 228
       end
     end
     object tsMateriais: TTabSheet
       Caption = 'Materiais'
       ImageIndex = 2
-      ExplicitWidth = 601
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -332,8 +324,6 @@ inherited FrmCadastroOS: TFrmCadastroOS
         GridLines = True
         TabOrder = 1
         ViewStyle = vsReport
-        ExplicitTop = 120
-        ExplicitHeight = 212
       end
     end
   end

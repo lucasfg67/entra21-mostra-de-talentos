@@ -3,7 +3,7 @@ object FrmPrincipal: TFrmPrincipal
   Top = 191
   Caption = 'Bootstrap'
   ClientHeight = 345
-  ClientWidth = 739
+  ClientWidth = 545
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,22 +14,30 @@ object FrmPrincipal: TFrmPrincipal
   Menu = mmPrincipal
   OldCreateOrder = False
   WindowState = wsMaximized
+  OnCreate = FormCreate
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object sbPrincipal: TStatusBar
     Left = 0
     Top = 326
-    Width = 739
+    Width = 545
     Height = 19
     Panels = <
       item
-        Width = 50
+        Width = 400
+      end
+      item
+        Width = 300
+      end
+      item
+        Width = 200
       end>
+    ExplicitWidth = 350
   end
   object mmPrincipal: TMainMenu
-    Left = 640
-    Top = 8
+    Left = 152
+    Top = 72
     object miCadastro: TMenuItem
       Caption = 'Cadastro'
       object miMaterial: TMenuItem
@@ -59,7 +67,14 @@ object FrmPrincipal: TFrmPrincipal
     end
     object miSair: TMenuItem
       Caption = '&Sair'
-      OnClick = miSairClick
+      object miLogoff: TMenuItem
+        Caption = 'Logoff'
+        OnClick = miLogoffClick
+      end
+      object miEncerrarApplicao: TMenuItem
+        Caption = 'Encerrar Aplica'#231#227'o'
+        OnClick = miEncerrarApplicaoClick
+      end
     end
   end
 end

@@ -28,9 +28,7 @@ object dmEntra21: TdmEntra21
       'GetDriverFunc=getSQLDriverINTERBASE'
       'LibraryName=dbx4fb.dll'
       'VendorLib=fdbclient.dll'
-      
-        'Database=localhost:D:\GeneralControl Mostra De Talentos\DB\DB.FD' +
-        'B'
+      'Database=localhost:D:\entra21-mostra-de-talentos\DB\DB.FDB'
       'User_Name=sysdba'
       'Password=masterkey'
       'Role=RoleName'

@@ -127,6 +127,10 @@
 			<DCCReference Include="VisaoControle\UFrmCadastroOS.pas">
 				<Form>FrmCadastroOS</Form>
 			</DCCReference>
+			<DCCReference Include="Modelo\Persistencia\UPapel.pas"/>
+			<DCCReference Include="Modelo\Persistencia\URepositorioPapel.pas"/>
+			<DCCReference Include="Modelo\UUsuarioLogado.pas"/>
+			<DCCReference Include="Modelo\Persistencia\URepositorioPapelPermissao.pas"/>
 			<BuildConfiguration Include="Debug">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
@@ -140,7 +144,7 @@
 			</BuildConfiguration>
 		</ItemGroup>
 		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')" Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
-		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\8.0\UserTools.proj"/>
 		<ProjectExtensions>
 			<Borland.Personality>Delphi.Personality.12</Borland.Personality>
 			<Borland.ProjectType>VCLApplication</Borland.ProjectType>

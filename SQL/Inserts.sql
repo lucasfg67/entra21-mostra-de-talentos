@@ -1,8 +1,26 @@
-﻿--PAIS;
+﻿insert into papel values (1, 'Administrativo');
+insert into papel values (2, 'Auxiliar Administrativo');
+insert into papel values (3, 'Tecnico');
+
+insert into permissao values (1, 'Cadastrar Cliente');
+insert into permissao values (2, 'Cadastrar Equipamento');
+insert into permissao values (3, 'Cadastrar Usuario');
+insert into permissao values (4, 'Cadastrar Tecnico');
+insert into permissao values (5, 'Cadastrar Os');
+
+insert into papel_permissao values (1, 1);
+insert into papel_permissao values (1, 2);
+insert into papel_permissao values (1, 3);
+insert into papel_permissao values (1, 4);
+insert into papel_permissao values (1, 5);
+insert into papel_permissao values (2, 1);
+insert into papel_permissao values (2, 2);
+insert into papel_permissao values (2, 5);
+
+--PAIS;
 insert into pais values (1, 'Brasil', 'BR');
 
 --ESTADO;
-
 insert into estado values (1, 'Acre', 'AC', 1);
 insert into estado values(2, 'Alagoas', 'AL', 1);
 insert into estado values(3, 'Amazonas', 'AM', 1);
@@ -32,7 +50,6 @@ insert into estado values(26, 'São Paulo', 'SP', 1);
 insert into estado values(27, 'Tocantins', 'TO', 1);
  
 --CIDADE;
-
 insert into cidade values(1, 'Afonso Cláudio', 8);
 insert into cidade values(2, 'Água Doce do Norte', 8);
 insert into cidade values(3, 'Águia Branca', 8);
@@ -5599,3 +5616,5 @@ insert into cidade values(5561, 'Tupirama', 27);
 insert into cidade values(5562, 'Tupiratins', 27);
 insert into cidade values(5563, 'Wanderlândia', 27);
 insert into cidade values(5564, 'Xambioá', 27);
+
+insert into usuario values (1, 'admin', '21232F297A57A5A743894A0E4A801FC3', 1);

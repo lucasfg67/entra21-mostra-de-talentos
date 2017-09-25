@@ -14,6 +14,7 @@ object frmPesquisa: TfrmPesquisa
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnResize = FormResize
   OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13

@@ -15,21 +15,27 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
     inherited lbCabecalho: TLabel
       Width = 194
       Caption = 'CADASTRO DE CLIENTE'
-      Font.Color = clBlack
       ExplicitWidth = 194
     end
   end
   inherited gbLocalizar: TGroupBox
     Width = 585
-    Color = clActiveCaption
+    Color = clTeal
     ParentBackground = False
     ParentColor = False
     ExplicitWidth = 585
+    inherited lbCodigo: TLabel
+      Width = 37
+      Height = 14
+      Font.Color = clWhite
+      Font.Height = -12
+      ExplicitWidth = 37
+      ExplicitHeight = 14
+    end
     inherited edCodigo: TEdit
       Height = 20
       Color = clBtnFace
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
       Font.Height = -12
       ExplicitHeight = 20
     end
@@ -50,8 +56,8 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
       ExplicitLeft = 233
     end
     inherited btnGravar: TBitBtn
-      Left = 116
-      ExplicitLeft = 116
+      Left = 119
+      ExplicitLeft = 119
     end
     inherited btnSair: TBitBtn
       Left = 467
@@ -65,7 +71,7 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
     Height = 290
     Align = alClient
     Caption = 'Informa'#231#245'es'
-    Color = clActiveCaption
+    Color = clTeal
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -11
@@ -75,30 +81,31 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
     ParentColor = False
     ParentFont = False
     TabOrder = 3
-    object edNome: TLabeledEdit
-      Left = 104
-      Top = 25
-      Width = 325
-      Height = 20
-      Color = clBtnFace
-      EditLabel.Width = 33
-      EditLabel.Height = 16
-      EditLabel.Caption = 'Nome'
-      EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
-      EditLabel.Font.Name = 'Tahoma'
-      EditLabel.Font.Style = []
-      EditLabel.ParentFont = False
+    object lbTelefone: TLabel
+      Left = 52
+      Top = 90
+      Width = 49
+      Height = 14
+      Caption = 'Telefone'
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
+      Font.Color = clWhite
       Font.Height = -12
       Font.Name = 'Tahoma'
       Font.Style = []
-      LabelPosition = lpLeft
-      MaxLength = 100
       ParentFont = False
-      TabOrder = 0
+    end
+    object lbCpfCnpj: TLabel
+      Left = 75
+      Top = 244
+      Width = 20
+      Height = 14
+      Caption = 'CPF'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
     end
     object edSolicitante: TLabeledEdit
       Left = 104
@@ -106,12 +113,12 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
       Width = 325
       Height = 20
       Color = clBtnFace
-      EditLabel.Width = 59
-      EditLabel.Height = 16
+      EditLabel.Width = 56
+      EditLabel.Height = 14
       EditLabel.Caption = 'Solicitante'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False
@@ -125,18 +132,18 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
       ParentFont = False
       TabOrder = 1
     end
-    object edCnpjCpf: TLabeledEdit
+    object edNome: TLabeledEdit
       Left = 104
-      Top = 237
+      Top = 27
       Width = 325
       Height = 20
       Color = clBtnFace
-      EditLabel.Width = 22
-      EditLabel.Height = 16
-      EditLabel.Caption = 'CPF'
+      EditLabel.Width = 32
+      EditLabel.Height = 14
+      EditLabel.Caption = 'Nome'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False
@@ -148,32 +155,7 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
       LabelPosition = lpLeft
       MaxLength = 100
       ParentFont = False
-      TabOrder = 8
-    end
-    object edTelefone: TLabeledEdit
-      Left = 104
-      Top = 90
-      Width = 325
-      Height = 20
-      Color = clBtnFace
-      EditLabel.Width = 50
-      EditLabel.Height = 16
-      EditLabel.Caption = 'Telefone'
-      EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
-      EditLabel.Font.Name = 'Tahoma'
-      EditLabel.Font.Style = []
-      EditLabel.ParentFont = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      LabelPosition = lpLeft
-      MaxLength = 100
-      ParentFont = False
-      TabOrder = 2
+      TabOrder = 0
     end
     object edCidade: TLabeledEdit
       Left = 104
@@ -181,12 +163,12 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
       Width = 143
       Height = 20
       Color = clBtnFace
-      EditLabel.Width = 39
-      EditLabel.Height = 16
+      EditLabel.Width = 36
+      EditLabel.Height = 14
       EditLabel.Caption = 'Cidade'
       EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
       EditLabel.Font.Name = 'Tahoma'
       EditLabel.Font.Style = []
       EditLabel.ParentFont = False
@@ -201,31 +183,6 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
       TabOrder = 3
       OnExit = edCidadeExit
       OnKeyDown = edCidadeKeyDown
-    end
-    object edEndereco: TLabeledEdit
-      Left = 104
-      Top = 151
-      Width = 325
-      Height = 20
-      Color = clBtnFace
-      EditLabel.Width = 53
-      EditLabel.Height = 16
-      EditLabel.Caption = 'Endere'#231'o'
-      EditLabel.Font.Charset = DEFAULT_CHARSET
-      EditLabel.Font.Color = clWindowText
-      EditLabel.Font.Height = -13
-      EditLabel.Font.Name = 'Tahoma'
-      EditLabel.Font.Style = []
-      EditLabel.ParentFont = False
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -12
-      Font.Name = 'Tahoma'
-      Font.Style = []
-      LabelPosition = lpLeft
-      MaxLength = 100
-      ParentFont = False
-      TabOrder = 6
     end
     object stNomeCidade: TStaticText
       Left = 282
@@ -273,8 +230,8 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
       Columns = 2
       Ctl3D = False
       Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -11
+      Font.Color = clWhite
+      Font.Height = -12
       Font.Name = 'Tahoma'
       Font.Style = []
       ItemIndex = 0
@@ -285,6 +242,63 @@ inherited FrmCadastroCliente: TFrmCadastroCliente
       ParentFont = False
       TabOrder = 7
       OnClick = rgTipoPessoaClick
+    end
+    object edTelefone: TMaskEdit
+      Left = 104
+      Top = 89
+      Width = 131
+      Height = 20
+      Color = clBtnFace
+      EditMask = '!(99)99999-9999;0;_'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      MaxLength = 14
+      ParentFont = False
+      TabOrder = 2
+    end
+    object edEndereco: TLabeledEdit
+      Left = 104
+      Top = 151
+      Width = 325
+      Height = 20
+      Color = clBtnFace
+      EditLabel.Width = 52
+      EditLabel.Height = 14
+      EditLabel.Caption = 'Endere'#231'o'
+      EditLabel.Font.Charset = DEFAULT_CHARSET
+      EditLabel.Font.Color = clWhite
+      EditLabel.Font.Height = -12
+      EditLabel.Font.Name = 'Tahoma'
+      EditLabel.Font.Style = []
+      EditLabel.ParentFont = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      LabelPosition = lpLeft
+      MaxLength = 60
+      ParentFont = False
+      TabOrder = 6
+    end
+    object edCpfCnpj: TMaskEdit
+      Left = 104
+      Top = 242
+      Width = 139
+      Height = 20
+      Color = clBtnFace
+      EditMask = '000\.000\.000\-00;0;_'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      MaxLength = 14
+      ParentFont = False
+      TabOrder = 8
     end
   end
   inherited pmOpcoes: TPopupMenu

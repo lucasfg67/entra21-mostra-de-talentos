@@ -9,21 +9,23 @@ uses
   , UCliente
   , URegraCRUDCliente
   , URegraCRUDCidade
-  , UCidade
+  , UCidade, Mask
   ;
 
 type
   TFrmCadastroCliente = class(TFrmCRUD)
     gbInformacoes: TGroupBox;
-    edNome: TLabeledEdit;
     edSolicitante: TLabeledEdit;
-    edCnpjCpf: TLabeledEdit;
-    edTelefone: TLabeledEdit;
+    edNome: TLabeledEdit;
     edCidade: TLabeledEdit;
     stNomeCidade: TStaticText;
-    edEndereco: TLabeledEdit;
     btnLocalizarCidade: TButton;
     rgTipoPessoa: TRadioGroup;
+    edTelefone: TMaskEdit;
+    lbTelefone: TLabel;
+    edEndereco: TLabeledEdit;
+    edCpfCnpj: TMaskEdit;
+    lbCpfCnpj: TLabel;
     procedure edCidadeExit(Sender: TObject);
     procedure btnLocalizarCidadeClick(Sender: TObject);
     procedure rgTipoPessoaClick(Sender: TObject);
@@ -142,7 +144,7 @@ begin
   inherited;
   FCLIENTE.NOME        := edNome.Text;
   FCLIENTE.SOLICITANTE := edSolicitante.Text;
-  FCLIENTE.CNPJ_CPF    := edCnpjCpf.Text;
+  FCLIENTE.CNPJ_CPF    := edCpfCnpj.Text;
   FCLIENTE.TELEFONE    := edTelefone.Text;
   FCLIENTE.ENDEREÇO    := edEndereco.Text;
   FCLIENTE.TIPO_PESSOA := TTipoPessoa(rgTipoPessoa.ItemIndex);
@@ -153,7 +155,7 @@ begin
   inherited;
   edNome.Text            := FCLIENTE.NOME;
   edSolicitante.Text     := FCLIENTE.SOLICITANTE;
-  edCnpjCpf.Text         := FCLIENTE.CNPJ_CPF;
+  edCpfCnpj.Text         := FCLIENTE.CNPJ_CPF;
   edTelefone.Text        := FCLIENTE.TELEFONE;
   edCidade.Text          := IntToStr(FCLIENTE.CIDADE.ID);
   stNomeCidade.Caption   := FCLIENTE.CIDADE.NOME;
@@ -165,8 +167,9 @@ procedure TFrmCadastroCliente.rgTipoPessoaClick(Sender: TObject);
 var
   leTipoPessoa: TTipoPessoa;
 begin
-  leTipoPessoa := TTipoPessoa(rgTipoPessoa.ItemIndex);
-  edCnpjCpf.EditLabel.Caption := CNT_TIPO_INSCRICAO_PESSOA[leTipoPessoa]
+  leTipoPessoa       := TTipoPessoa(rgTipoPessoa.ItemIndex);
+  lbCpfCnpj.Caption  := CNT_TIPO_INSCRICAO_PESSOA[leTipoPessoa];
+  edCpfCnpj.EditMask := CNT_TIPO_MASCARA_PESSOA[leTipoPessoa]
 end;
 
 end.

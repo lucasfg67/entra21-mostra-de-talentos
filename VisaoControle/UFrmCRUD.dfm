@@ -110,7 +110,6 @@ object FrmCRUD: TFrmCRUD
       ParentFont = False
       TabOrder = 1
       OnExit = edCodigoExit
-      OnKeyDown = edCodigoKeyDown
     end
   end
   object pnlBotoes: TPanel
@@ -297,7 +296,7 @@ object FrmCRUD: TFrmCRUD
     end
   end
   object pmOpcoes: TPopupMenu
-    Left = 584
-    Top = 16
+    Left = 528
+    Top = 8
   end
 end

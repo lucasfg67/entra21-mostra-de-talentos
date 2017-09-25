@@ -30,6 +30,7 @@ type
     procedure edPesquisaKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure dbgClienteKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure cbOpcoesChange(Sender: TObject);
+    procedure FormResize(Sender: TObject);
   private
     FDataSource     : TDataSource;
     FDataSetProvider: TDataSetProvider;
@@ -38,6 +39,7 @@ type
     FOpcaoPesquisa  : TOpcaoPesquisa;
 
     function RetornaDataSet: TSQLDataSet;
+    procedure ResizeDBGrid;
 
   public
     class function MostrarPesquisa(const coOpcaoPesquisa: TOpcaoPesquisa): Variant;
@@ -79,6 +81,52 @@ begin
   end;
 end;
 
+procedure TfrmPesquisa.ResizeDBGrid;
+var
+  I, TotalWidht, VarWidth, QtdTotalColuna : Integer;
+  xColumn : TColumn;
+begin
+  // Largura total de todas as colunas antes de redimensionar
+  TotalWidht := 0;
+
+  // Quantas colunas devem ser auto-redimensionamento
+  QtdTotalColuna := 0;
+
+  for I := 0 to -1 + dbgCliente.Columns.Count do
+  begin
+    TotalWidht := TotalWidht + dbgCliente.Columns[I].Width;
+    if dbgCliente.Columns[I].Field.Tag <> 0 then
+      Inc(QtdTotalColuna);
+  end;
+
+  // Adiciona 1px para a linha de separador de coluna
+  if dgColLines in dbgCliente.Options then
+    TotalWidht := TotalWidht + dbgCliente.Columns.Count;
+
+  // Adiciona a largura da coluna indicadora
+  if dgIndicator in dbgCliente.Options then
+    TotalWidht := TotalWidht + IndicatorWidth;
+
+  // width vale "Left"
+  VarWidth :=  dbgCliente.ClientWidth - TotalWidht;
+
+
+  // Da mesma forma distribuir VarWidth para todas as colunas auto-resizable
+  if QtdTotalColuna > 0 then
+    VarWidth := varWidth div QtdTotalColuna;
+
+  for I := 0 to -1 + dbgCliente.Columns.Count do
+  begin
+    xColumn := dbgCliente.Columns[I];
+    if xColumn.Field.Tag <> 0 then
+    begin
+      xColumn.Width := xColumn.Width + VarWidth;
+      if xColumn.Width < xColumn.Field.Tag then
+        xColumn.Width := xColumn.Field.Tag;
+    end;
+  end;
+end;
+
 function TfrmPesquisa.RetornaDataSet: TSQLDataSet;
 begin
   UDM.dmEntra21.SQLSelect.Close;
@@ -112,6 +160,7 @@ begin
   lbCabecalho.Caption := AnsiUpperCase(lbCabecalho.Caption + ' - ' + FOpcaoPesquisa.NOME_PESQUISA);
 
   FRetorno := 0;
+  ResizeDBGrid;
 end;
 
 procedure TfrmPesquisa.btnConfirmarClick(Sender: TObject);
@@ -135,8 +184,14 @@ begin
   FClientDataSet.IndexFieldNames := cbOpcoes.Text;
 end;
 
+procedure TfrmPesquisa.FormResize(Sender: TObject);
+begin
+  ResizeDBGrid;
+end;
+
 procedure TfrmPesquisa.FormShow(Sender: TObject);
 var
+  I: Integer;
   lsCampo: String;
 begin
   for lsCampo in FOpcaoPesquisa.FILTROS do
@@ -144,6 +199,11 @@ begin
 
   cbOpcoes.ItemIndex             := 0;
   FClientDataSet.IndexFieldNames := cbOpcoes.Text;
+
+  for I := 0 to FClientDataSet.FieldCount - 1 do
+    FClientDataSet.Fields[i].Tag := 60;
+
+  ResizeDBGrid;
 end;
 
 procedure TfrmPesquisa.edPesquisaKeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);

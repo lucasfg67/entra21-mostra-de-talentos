@@ -48,7 +48,6 @@ type
     procedure edCodigoExit(Sender: TObject);
     procedure btnLimparClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
-    procedure edCodigoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure FormDestroy(Sender: TObject);
   private
     FENTIDADE: TENTIDADE;
@@ -370,12 +369,6 @@ end;
 procedure TFrmCRUD.AdicionaOpcaoPesquisa(const coOpcaoPesquisa: TOpcaoPesquisa);
 begin
   FListaOpcoesPesquisa.Add(coOpcaoPesquisa);
-end;
-
-procedure TFrmCRUD.edCodigoKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
-begin
-  if Key = VK_F7 then
-    btnLocalizar.Click;
 end;
 
 procedure TFrmCRUD.FormShow(Sender: TObject);

@@ -14,16 +14,23 @@ inherited FrmCadastroOS: TFrmCadastroOS
     inherited lbCabecalho: TLabel
       Width = 146
       Caption = 'CADASTRO DE OS'
-      Font.Color = clBlack
       ExplicitWidth = 146
     end
   end
   inherited gbLocalizar: TGroupBox
     Width = 590
-    Color = clActiveCaption
+    Color = clTeal
     ParentBackground = False
     ParentColor = False
     ExplicitWidth = 590
+    inherited lbCodigo: TLabel
+      Width = 37
+      Height = 14
+      Font.Color = clWhite
+      Font.Height = -12
+      ExplicitWidth = 37
+      ExplicitHeight = 14
+    end
     inherited edCodigo: TEdit
       Color = clBtnFace
     end
@@ -69,41 +76,43 @@ inherited FrmCadastroOS: TFrmCadastroOS
         Height = 332
         Align = alClient
         Caption = 'Informa'#231#245'es'
-        Color = clActiveCaption
+        Color = clTeal
+        Ctl3D = False
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
+        Font.Color = clBlack
         Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentBackground = False
         ParentColor = False
+        ParentCtl3D = False
         ParentFont = False
         TabOrder = 0
         object lbDataEntrada: TLabel
-          Left = 52
+          Left = 25
           Top = 34
-          Width = 64
-          Height = 13
+          Width = 71
+          Height = 14
           Caption = 'Data Entrada'
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWindowText
-          Font.Height = -11
+          Font.Color = clWhite
+          Font.Height = -12
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
         end
         object edDescricao_Servico: TLabeledEdit
-          Left = 120
+          Left = 100
           Top = 58
           Width = 325
-          Height = 21
+          Height = 19
           Color = clBtnFace
-          EditLabel.Width = 101
-          EditLabel.Height = 16
+          EditLabel.Width = 94
+          EditLabel.Height = 14
           EditLabel.Caption = 'Descri'#231#227'o Servi'#231'o'
           EditLabel.Font.Charset = DEFAULT_CHARSET
-          EditLabel.Font.Color = clWindowText
-          EditLabel.Font.Height = -13
+          EditLabel.Font.Color = clWhite
+          EditLabel.Font.Height = -12
           EditLabel.Font.Name = 'Tahoma'
           EditLabel.Font.Style = []
           EditLabel.ParentFont = False
@@ -118,17 +127,17 @@ inherited FrmCadastroOS: TFrmCadastroOS
           TabOrder = 0
         end
         object edCliente: TLabeledEdit
-          Left = 120
+          Left = 100
           Top = 90
           Width = 150
-          Height = 21
+          Height = 19
           Color = clBtnFace
-          EditLabel.Width = 39
-          EditLabel.Height = 16
+          EditLabel.Width = 37
+          EditLabel.Height = 14
           EditLabel.Caption = 'Cliente'
           EditLabel.Font.Charset = DEFAULT_CHARSET
-          EditLabel.Font.Color = clWindowText
-          EditLabel.Font.Height = -13
+          EditLabel.Font.Color = clWhite
+          EditLabel.Font.Height = -12
           EditLabel.Font.Name = 'Tahoma'
           EditLabel.Font.Style = []
           EditLabel.ParentFont = False
@@ -144,17 +153,17 @@ inherited FrmCadastroOS: TFrmCadastroOS
           OnExit = edClienteExit
         end
         object edEquipamento: TLabeledEdit
-          Left = 120
+          Left = 100
           Top = 122
           Width = 150
-          Height = 21
+          Height = 19
           Color = clBtnFace
-          EditLabel.Width = 74
-          EditLabel.Height = 16
+          EditLabel.Width = 72
+          EditLabel.Height = 14
           EditLabel.Caption = 'Equipamento'
           EditLabel.Font.Charset = DEFAULT_CHARSET
-          EditLabel.Font.Color = clWindowText
-          EditLabel.Font.Height = -13
+          EditLabel.Font.Color = clWhite
+          EditLabel.Font.Height = -12
           EditLabel.Font.Name = 'Tahoma'
           EditLabel.Font.Style = []
           EditLabel.ParentFont = False
@@ -170,12 +179,13 @@ inherited FrmCadastroOS: TFrmCadastroOS
           OnExit = edEquipamentoExit
         end
         object edDataEntrada: TDateTimePicker
-          Left = 122
+          Left = 100
           Top = 31
           Width = 150
           Height = 21
           Date = 42997.834965393520000000
           Time = 42997.834965393520000000
+          Color = clBtnFace
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -11
@@ -185,7 +195,7 @@ inherited FrmCadastroOS: TFrmCadastroOS
           TabOrder = 3
         end
         object stNomeCliente: TStaticText
-          Left = 308
+          Left = 288
           Top = 92
           Width = 137
           Height = 19
@@ -204,7 +214,7 @@ inherited FrmCadastroOS: TFrmCadastroOS
           Transparent = False
         end
         object btnLocalizarCliente: TButton
-          Left = 275
+          Left = 255
           Top = 92
           Width = 30
           Height = 19
@@ -221,8 +231,8 @@ inherited FrmCadastroOS: TFrmCadastroOS
           OnClick = btnLocalizarClienteClick
         end
         object stNomeEquipamento: TStaticText
-          Left = 308
-          Top = 123
+          Left = 288
+          Top = 124
           Width = 137
           Height = 19
           AutoSize = False
@@ -240,8 +250,8 @@ inherited FrmCadastroOS: TFrmCadastroOS
           Transparent = False
         end
         object btnLocalizaEquipamento: TButton
-          Left = 275
-          Top = 123
+          Left = 255
+          Top = 124
           Width = 30
           Height = 19
           Cursor = crHandPoint
@@ -261,13 +271,17 @@ inherited FrmCadastroOS: TFrmCadastroOS
     object tsTecnicos: TTabSheet
       Caption = 'T'#233'cnicos'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       object pnlTecnicos: TPanel
         Left = 0
         Top = 0
         Width = 582
         Height = 143
         Align = alTop
-        Color = clActiveCaption
+        Color = clTeal
         ParentBackground = False
         TabOrder = 0
       end
@@ -289,8 +303,6 @@ inherited FrmCadastroOS: TFrmCadastroOS
         GridLines = True
         TabOrder = 1
         ViewStyle = vsReport
-        ExplicitTop = 104
-        ExplicitHeight = 228
       end
     end
     object tsMateriais: TTabSheet
@@ -302,7 +314,7 @@ inherited FrmCadastroOS: TFrmCadastroOS
         Width = 582
         Height = 135
         Align = alTop
-        Color = clActiveCaption
+        Color = clTeal
         ParentBackground = False
         TabOrder = 0
       end

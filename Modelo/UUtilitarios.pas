@@ -49,8 +49,14 @@ type
   TTipoPessoa = (tpFisica, tpJuridica);
 
 const
+  CNT_MASCARA_CPF  = '999.999.999-99;0;_';
+  CNT_MASCARA_CNPJ = '99.999.999/9999-99;0;_';
+
   CNT_TIPO_INSCRICAO_PESSOA:
     array[TTipoPessoa] of String = (STR_CLIENTE_CPF, STR_CLIENTE_CNPJ);
+
+  CNT_TIPO_MASCARA_PESSOA:
+    array[TTipoPessoa] of String = (CNT_MASCARA_CPF, CNT_MASCARA_CNPJ);
 
   CNT_TIPO_OPERACAO_USUARIO:
     array[TTipoOperacaoUsuario] of String = ('',

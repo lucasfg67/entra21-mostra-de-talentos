@@ -12,7 +12,6 @@ type
   TOS = class  (TENTIDADE)
   public
     DATA_ENTRADA      : Tdate;
-    DESCRICAO_SERVICO : String;
     CLIENTE           : TCLIENTE;
     EQUIPAMENTO       : TEQUIPAMENTO;
 
@@ -25,14 +24,13 @@ type
 const
   TBL_OS                   = 'OS';
   FLD_OS_DATA_ENTRADA      = 'DATA_ENTRADA';
-  FLD_OS_DESCRICAO_SERVICO = 'DESCRICAO_SERVICO';
   FLD_OS_ID_CLIENTE        = 'ID_CLIENTE';
   FLD_OS_ID_EQUIPAMENTO    = 'ID_EQUIPAMENTO';
 
   VW_OS                    = 'VW_OS';
   VW_OS_ID                 = 'Cód.';
   VW_OS_DATA_ENTRADA       = 'Entrada';
-  VW_OS_DESCRICAO_SERVICO  = 'Descrição do Serviço';
+
   VW_OS_ID_CLIENTE         = 'Cliente';
   VW_OS_ID_EQUIPAMENTO     = 'Equipamento';
 

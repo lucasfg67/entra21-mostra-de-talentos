@@ -58,7 +58,6 @@ begin
   with FSQLSelect do
   begin
     coOS.DATA_ENTRADA      := FieldByName(FLD_OS_DATA_ENTRADA).AsDateTime;
-    coOS.DESCRICAO_SERVICO := FieldByName(FLD_OS_DESCRICAO_SERVICO).AsString;
     coOS.CLIENTE           := TCLIENTE(
       FRepositorioCliente.Retorna(FieldByName(FLD_OS_ID_CLIENTE).AsInteger));
     coOS.EQUIPAMENTO       := TEQUIPAMENTO (
@@ -72,7 +71,6 @@ begin
   with coSQLQuery do
   begin
     ParamByName(FLD_OS_DATA_ENTRADA).AsDateTime    := coOS.DATA_ENTRADA;
-    ParamByName(FLD_OS_DESCRICAO_SERVICO).AsString := coOS.DESCRICAO_SERVICO;
     ParamByName(FLD_OS_ID_CLIENTE).AsInteger       := coOS.CLIENTE.ID;
     ParamByName(FLD_OS_ID_EQUIPAMENTO).AsInteger   := coOS.EQUIPAMENTO.ID;
   end;

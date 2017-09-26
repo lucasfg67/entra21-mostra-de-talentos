@@ -82,6 +82,7 @@ begin
     coUSUARIO.NOME  := FieldByName(FLD_USUARIO_NOME).AsString;
     coUSUARIO.SENHA := FieldByName(FLD_USUARIO_SENHA).AsString;
     coUSUARIO.PAPEL := TPapelUsuario(FieldByName(FLD_USUARIO_ID_PAPEL).AsInteger);
+    coUSUARIO.DESCRICAO_SERVICO := FieldByName(FLD_USUARIO_DESCRICAO_SERVICO).AsString;
 
     for PermissaoUsuario in RepositorioPapelPermissao.RetornaPermissoes(coUSUARIO.PAPEL) do
       coUSUARIO.PERMISSOES := coUSUARIO.PERMISSOES + [PermissaoUsuario];
@@ -98,6 +99,7 @@ begin
     ParamByName(FLD_USUARIO_NOME).AsString  := coUSUARIO.NOME;
     ParamByName(FLD_USUARIO_SENHA).AsString := coUSUARIO.SENHA;
     ParamByName(FLD_USUARIO_ID_PAPEL).AsInteger := Integer(coUSUARIO.PAPEL);
+    ParamByName(FLD_USUARIO_DESCRICAO_SERVICO).AsString := coUSUARIO.DESCRICAO_SERVICO;
   end;
 end;
 

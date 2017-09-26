@@ -69,7 +69,6 @@ create generator gen_cliente_id;
 create table os(
 	id                	integer       not null,
 	data_entrada 		date          not null,
-	descricao_servico 	varchar(4000) not null,
 	id_cliente        	integer       not null,
 	id_equipamento 	  	integer       not null,	
 	
@@ -107,10 +106,11 @@ create table os_tecnico(
 create generator gen_os_tecnico_id;
 
 create table os_material(
-	id          	integer not null,
-	id_os       	integer not null,
-	id_material 	integer not null,
-	quantidade 	    integer not null,
+	id          	   integer        not null,
+	id_os       	   integer        not null,
+	descricao_servico  varchar (4000) not null,
+ 	id_material 	   integer        not null,
+	quantidade 	       integer        not null,
 		
 	constraint pk_os_material primary key (id),
 	

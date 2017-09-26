@@ -24,16 +24,19 @@ type
     miOS: TMenuItem;
     miLogoff: TMenuItem;
     miEncerrarApplicao: TMenuItem;
+    miOSCadastro: TMenuItem;
+    miConsulta: TMenuItem;
     procedure FormShow(Sender: TObject);
     procedure miMaterialClick(Sender: TObject);
     procedure miClienteClick(Sender: TObject);
     procedure miEquipamentoClick(Sender: TObject);
     procedure miUsuarioClick(Sender: TObject);
     procedure miTecnicoClick(Sender: TObject);
-    procedure miOSClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure miLogoffClick(Sender: TObject);
     procedure miEncerrarApplicaoClick(Sender: TObject);
+    procedure miOSCadastroClick(Sender: TObject);
+    procedure miConsultaClick(Sender: TObject);
   private
     FRepositorioPapel: TRepositorioPapel;
 
@@ -67,6 +70,11 @@ begin
   Application.CreateForm(TFrmCadastroCliente, FrmCadastroCliente);
 end;
 
+procedure TFrmPrincipal.miConsultaClick(Sender: TObject);
+begin
+    FrmCadastroOS := TFrmCadastroOS.Create(Application, True);
+end;
+
 procedure TFrmPrincipal.miEncerrarApplicaoClick(Sender: TObject);
 begin
   Close;
@@ -96,9 +104,9 @@ begin
   Application.CreateForm(TFrmCadastroMaterial, FrmCadastroMaterial);
 end;
 
-procedure TFrmPrincipal.miOSClick(Sender: TObject);
+procedure TFrmPrincipal.miOSCadastroClick(Sender: TObject);
 begin
-  Application.CreateForm(TFrmCadastroOS, FrmCadastroOS);
+  FrmCadastroOS := TFrmCadastroOS.Create(Application);
 end;
 
 procedure TFrmPrincipal.miTecnicoClick(Sender: TObject);

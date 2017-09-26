@@ -45,7 +45,7 @@ resourcestring
   STR_OS_CLIENTE_NAO_INFORMADO           = 'Campo CLIENTE não informado';
   STR_OS_EQUIPAMENTO_NAO_INFORMADO       = 'Campo EQUIPAMENTO não informado';
   STR_OS_DATA_ENTRADA_NAO_INFORMADO      = 'Campo DATA DE ENTRADA não informado';
-  STR_OS_DESCRICAO_SERVICO_NAO_INFORMADO = 'Campo DESCRIÇÃO SERVIÇO não informado';
+
 
   //Cidade
   STR_CIDADE_NOME_NAO_INFORMADO   = 'Campo CIDADE não informado';
@@ -74,6 +74,7 @@ resourcestring
   STR_SENHAS_NAO_CONFEREM        = 'Senhas não conferem';
   STR_USUARIO_NOME_NAO_INFORMADO = 'Nome do usuário não foi informado';
   STR_SENHA_ATUAL_NAO_CONFERE    = 'Senha atual não confere';
+  STR_USUSARIO_DESCRICAO_SERVICO_NAO_INFORMADO = 'Campo DESCRIÇÃO SERVIÇO não informado';
 
   //Login
   STR_USUARIO_OU_SENHA_SAO_INVALIDOS = 'Usuário ou senha são inválidos';

@@ -3,7 +3,7 @@ object FrmPrincipal: TFrmPrincipal
   Top = 191
   Caption = 'Bootstrap'
   ClientHeight = 345
-  ClientWidth = 545
+  ClientWidth = 769
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -21,7 +21,7 @@ object FrmPrincipal: TFrmPrincipal
   object sbPrincipal: TStatusBar
     Left = 0
     Top = 326
-    Width = 545
+    Width = 769
     Height = 19
     Panels = <
       item
@@ -33,7 +33,7 @@ object FrmPrincipal: TFrmPrincipal
       item
         Width = 200
       end>
-    ExplicitWidth = 350
+    ExplicitWidth = 545
   end
   object mmPrincipal: TMainMenu
     Left = 152
@@ -62,7 +62,14 @@ object FrmPrincipal: TFrmPrincipal
       end
       object miOS: TMenuItem
         Caption = 'OS'
-        OnClick = miOSClick
+        object miOSCadastro: TMenuItem
+          Caption = 'Cadastro'
+          OnClick = miOSCadastroClick
+        end
+        object miConsulta: TMenuItem
+          Caption = 'Consulta'
+          OnClick = miConsultaClick
+        end
       end
     end
     object miSair: TMenuItem

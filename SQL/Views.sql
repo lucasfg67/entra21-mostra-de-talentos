@@ -16,9 +16,10 @@ select c.id           as "Cód."
     from cliente cl inner join cidade c on (c.id = cl.id_cidade); 
     
  create view vw_usuario as 
- select id    as "Cód."
- 	   ,nome  as "Nome"
- 	   ,senha as "Senha"
+ select id                as "Cód."
+ 	   ,nome              as "Nome"
+ 	   ,descricao_servico as "Descrição do Serviço"
+ 	   ,senha             as "Senha"
     from usuario;
     
  create view vw_material as 
@@ -46,7 +47,6 @@ select id                  as "Cód."
  create view vw_os           as 
  select os.id                as "Cód."
        ,os.data_entrada      as "Entrada"
-       ,os.descricao_servico as "Descrição do Serviço"
        ,c.nome	             as "Cliente"
        ,e.nome		         as "Equipamento"
     from os  inner join cliente c on (c.id = os.id_cliente) 

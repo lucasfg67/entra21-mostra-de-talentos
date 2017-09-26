@@ -20,7 +20,6 @@ type
     tsGeral: TTabSheet;
     gbInformacoes: TGroupBox;
     lbDataEntrada: TLabel;
-    edDescricao_Servico: TLabeledEdit;
     edCliente: TLabeledEdit;
     edEquipamento: TLabeledEdit;
     edDataEntrada: TDateTimePicker;
@@ -34,6 +33,14 @@ type
     lvTecnicos: TListView;
     Panel1: TPanel;
     lvMateriais: TListView;
+    edDescricao_Servico: TLabeledEdit;
+    edTecnico: TLabeledEdit;
+    LabeledEdit1: TLabeledEdit;
+    LabeledEdit2: TLabeledEdit;
+    edData: TDateTimePicker;
+    lbData: TLabel;
+    LabeledEdit3: TLabeledEdit;
+    LabeledEdit4: TLabeledEdit;
     procedure edClienteExit(Sender: TObject);
     procedure edEquipamentoExit(Sender: TObject);
     procedure btnLocalizarClienteClick(Sender: TObject);
@@ -43,6 +50,7 @@ type
     FRegraCRUDOs: TRegraCRUDOs;
     FRegraCRUDCliente: TRegraCRUDCliente;
     FRegraCRUDEquipamento: TRegraCRUDEquipamento;
+    FModoConsulta: Boolean;
 
   protected
     procedure Inicializa; override;
@@ -51,6 +59,9 @@ type
     procedure PreencheFormulario; override;
     procedure PosicionaCursorPrimeiroCampo; override;
     procedure HabilitaCampos(const ceTipoOperacaoUsuario: TTipoOperacaoUsuario); override;
+
+  public
+    constructor Create(AOwner: TComponent; const cbModoConsulta: Boolean = false); overload;
   end;
 
 var
@@ -65,6 +76,7 @@ uses
   , UEntidade
   , UDialogo
   , UFrmPesquisa
+  , StrUtils
   ;
 
 { TFrmCadastroOS }
@@ -95,6 +107,12 @@ begin
 
   if Trim(edCliente.Text) <> EmptyStr then
     edCliente.OnExit(btnLocalizarCliente);
+end;
+
+constructor TFrmCadastroOS.Create(AOwner: TComponent; const cbModoConsulta: Boolean = false);
+begin
+  FModoConsulta := cbModoConsulta;
+  inherited Create(AOwner);
 end;
 
 procedure TFrmCadastroOS.edClienteExit(Sender: TObject);
@@ -146,7 +164,12 @@ procedure TFrmCadastroOS.HabilitaCampos(
   const ceTipoOperacaoUsuario: TTipoOperacaoUsuario);
 begin
   inherited;
-  gbInformacoes.Enabled := FTipoOperacaoUsuario In [touInsercao, touAtualizacao];
+  gbInformacoes.Enabled := (FTipoOperacaoUsuario In [touInsercao, touAtualizacao]) and not FModoConsulta;
+  btnGravar.Enabled     := btnGravar.Enabled and not FModoConsulta;
+  btnExcluir.Enabled    := btnExcluir.Enabled and not FModoConsulta;
+  btnNovo.Enabled       := btnNovo.Enabled and not FModoConsulta;
+
+  lbCabecalho.Caption := IfThen(FModoConsulta, lbCabecalho.Caption + ' - SOMENTE CONSULTA', lbCabecalho.Caption);
 end;
 
 procedure TFrmCadastroOS.Inicializa;
@@ -158,7 +181,7 @@ begin
 
   AdicionaOpcaoPesquisa(TOpcaoPesquisa
     .Create
-    .AdicionaFiltro(VW_OS_DESCRICAO_SERVICO)
+    .AdicionaFiltro(VW_OS_ID)
     .DefineNomeCampoRetorno(VW_OS_ID)
     .DefineNomePesquisa(STR_OS)
     .DefineVisao(VW_OS));
@@ -178,7 +201,7 @@ procedure TFrmCadastroOS.PreencheEntidade;
 begin
   inherited;
   FOS.DATA_ENTRADA      := edDataEntrada.DateTime;
-  FOS.DESCRICAO_SERVICO := edDescricao_Servico.Text;
+
 
 end;
 
@@ -186,7 +209,6 @@ procedure TFrmCadastroOS.PreencheFormulario;
 begin
   inherited;
   edDataEntrada.DateTime    := FOS.DATA_ENTRADA;
-  edDescricao_Servico.Text  := FOS.DESCRICAO_SERVICO;
   edCliente.Text            := IntToStr(FOS.CLIENTE.ID);
   stNomeCliente.Caption     := FOS.CLIENTE.NOME;
   edEquipamento.Text        := IntToStr(FOS.EQUIPAMENTO.ID);

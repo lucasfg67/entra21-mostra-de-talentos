@@ -74,11 +74,10 @@ begin
    if (coOs.DATA_ENTRADA) = 0 Then
      raise EValidacaoNegocio.Create(STR_OS_DATA_ENTRADA_NAO_INFORMADO);
 
-   if Trim(coOs.DESCRICAO_SERVICO) = EmptyStr Then
-     raise EValidacaoNegocio.Create(STR_OS_DESCRICAO_SERVICO_NAO_INFORMADO);
-
     ValidaCliente(coOs.CLIENTE);
     ValidaEquipamento(coOs.EQUIPAMENTO);
+
+
 end;
 
 end.

@@ -83,6 +83,9 @@ begin
     if NOME = EmptyStr Then
       raise EValidacaoNegocio.Create(STR_USUARIO_NOME_NAO_INFORMADO);
 
+       if DESCRICAO_SERVICO = EmptyStr Then
+     raise EValidacaoNegocio.Create(STR_USUSARIO_DESCRICAO_SERVICO_NAO_INFORMADO);
+
     ValidaSenha(SENHA, CONFIRMACAO_SENHA);
   end;
 end;
